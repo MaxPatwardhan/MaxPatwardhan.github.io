@@ -36,12 +36,128 @@
             <!-- Post -->
             <section class="post">
                 <header class="major">
-                    <h1>Aircraft-Automatically Deployable Flight Recorder</h1>
-				</header>
-                <h2>Ahoy there matie, this page be under construction!</h2>
-                <span class="image fit"><img src="images/metamaterial/construction.png" alt="" /></span>
-                <p><i>This image is brought to you by the modern wonders of AI. Certainly this technology is worth the hundreds of billions of dollars being poured into it.</i></p>
+                    <h1>Jack-In-Box Lagrangian Physics Simulation</h1>
+                    <h3>Programmed and Simulated in Python</h3>
+                </header>
+                <p>In this project, I used Lagrangian physics to simulate a "Jack-In-Box". The jack experiences impacts against
+                    the walls of the box, which is under the force of gravity as well as an external forcing functions.
+                    The jack is subject to only the force of gravity. The external forces applied to the box are defined as follows:<br>
 
+                    The force in the \(y\)-direction:
+                    \[
+                    f_{y,\text{box}} = 4 m g + 0.5 k \sin(2 \pi t)
+                    \]
+
+                    The force in the \(x\)-direction:
+                    \[
+                    f_{x,\text{box}} = 0.5 k \sin(2 \pi t)
+                    \]
+
+                    The torque about the center of mass:
+                    \[
+                    f_{\theta,\text{box}} = k \sin(\pi t)
+                    \]
+                </p>
+                <p>Note that \(m,k\), and \(t\) represent mass, the moment of inertia of the box, and time respectively.</p>
+
+                <h2>Video of Simulation</h2>
+                <div class="video-container" style="margin-top: 50px; margin-bottom: 50px;">
+                    <video controls autoplay loop muted playsinline>
+                        <source src="images/jackinbox/jackinBox.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+
+                The 
+
+                <div>
+                    <span class="image fit">
+                        <img src="images/jackinbox/finalDiagram.jpeg" alt="Image"/>
+                    </span>
+                </div>
+                
+                <p>The frames and coordinate transforms seen in Figure 1 were implemented in the 
+                    <i>Definition of Variables, Constants, and Transforms</i> section. A function called "se3sym" was used to take \(x\), \(y\),
+                     and \(\theta\) data in order to create SE3 transformation matrices. These matrices take the form:</p>
+
+                <p>
+                    \[
+                    t(x,y,\theta)_{jack,box} =
+                    \begin{bmatrix}
+                        \cos{(\theta)} & -\sin{(\theta)} & 0 & x \\ 
+                        \sin{(\theta)} & \cos{(\theta)} & 0 & y \\ 
+                        0 & 0 & 1 & 0 \\ 
+                        0 & 0 & 0 & 1 
+                    \end{bmatrix}
+                    \]
+                </p>
+            
+                <p>From Equation 1, the configuration variables \(x_j\), \(y_j\), \(\theta_j\), \(x_b\), \(y_b\), and \(\theta_b\) 
+                    were used to create transforms from the world-frame to the jack and box frame respectively. From here, the location of each
+                     wall and jack-arm was defined using another coordinate transform of the form:</p>
+            
+                <p>
+                    \[
+                    t(\pm l)_{arm,wall} =
+                    \begin{bmatrix}
+                        1 & 0 & 0 & \pm l \\ 
+                        0 & 1 & 0 & \pm l \\ 
+                        0 & 0 & 1 & 0 \\ 
+                        0 & 0 & 0 & 1 
+                    \end{bmatrix}
+                    \]
+                </p>
+            
+                <p>Thus the product of Equation 1 and Equation 2 with the desired length, \(l\), will yield a transform to a given jack edge or wall.
+                     An example is given below:</p>
+            
+                <p>
+                    \[
+                    t_{j1} =
+                    \begin{bmatrix}
+                        \cos{(\theta_j)} & -\sin{(\theta_j)} & 0 & x_j \\ 
+                        \sin{(\theta_j)} & \cos{(\theta_j)} & 0 & y_j \\ 
+                        0 & 0 & 1 & 0 \\ 
+                        0 & 0 & 0 & 1 
+                    \end{bmatrix}
+                    \begin{bmatrix}
+                        1 & 0 & 0 & l_{jack} \\ 
+                        0 & 1 & 0 & 0 \\ 
+                        0 & 0 & 1 & 0 \\ 
+                        0 & 0 & 0 & 1 
+                    \end{bmatrix}
+                    =
+                    \begin{bmatrix}
+                        \cos{(\theta_j)} & -\sin{(\theta_j)} & 0 & x_j + l_{jack} \\ 
+                        \sin{(\theta_j)} & \cos{(\theta_j)} & 0 & y_j \\ 
+                        0 & 0 & 1 & 0 \\ 
+                        0 & 0 & 0 & 1 
+                    \end{bmatrix}
+                    \]
+                </p>
+            
+                <p>After the transformation to each element of the jack and box was defined, the Lagrangian could be calculated and solved using 
+                    the body velocity, inertia tensor, and the height of each element. The moments of inertia were easily calculated as each element 
+                    was treated as a uniform density rectangle or circle. A matrix containing external forces to the box was defined, and the 
+                    Euler-Lagrange equations were formulated. Once solved, they were translated into numerical solutions using lambdify. 
+                    The system was simulated with multiple types of external constraint forces. In each simulation, the force of gravity on the 
+                    box was counteracted with an equal and opposite external force. Beyond that, sinusoidal forces in each degree of freedom were 
+                    modeled on the box.</p>
+            
+                <p>After modeling the standard Euler-Lagrange equations, impact conditions were defined for each end of the jack to each wall. 
+                    The sixteen impact conditions were defined by finding the transformation between each wall and each end of the jack; an 
+                    individual \(\phi\) was defined for each impact. Next, the Hamiltonian was calculated in order to formulate the impact equations. 
+                    Two dummy-variable dictionaries were defined for pre/post impact definitions of velocity. The impact update equations were solved
+                     with \(\tau^+\) and \(\tau^-\) variables substituted, and were finally appended to a list. From this point, an impact test 
+                     function was defined. This function takes in the configuration of the system, and tests to see if the impact conditions are 
+                     satisfied. The function returns a boolean depending on whether or not a condition is satisfied, as well as the index of the
+                      condition satisfied. This index was then passed to the impact update function, which takes the impact equation index and 
+                      the system state, and evaluates the specified solution. The function returns the updated velocities for further simulation. 
+                      These operations are carried out for the specified time interval, populating a trajectory vector. This vector is then passed 
+                      to the animation function, which makes use of the previously described transformations in order to draw the lines for 
+                      animation.</p>
+            
             </section>
 
         </div>
@@ -65,6 +181,7 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/slideshow.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 </body>
 </html>

@@ -40,7 +40,7 @@
                     <h3>Programmed and Simulated in Python</h3>
                 </header>
                 <p>In this project, I used Lagrangian physics to simulate a "Jack-In-Box". The jack experiences impacts against
-                    the walls of the box, which is under the force of gravity as well as an external forcing functions.
+                    the walls of the box, which is under the force of gravity as well as an external forcing function.
                     The jack is subject to only the force of gravity. The external forces applied to the box are defined as follows:<br>
 
                     The force in the \(y\)-direction:
@@ -58,7 +58,11 @@
                     f_{\theta,\text{box}} = k \sin(\pi t)
                     \]
                 </p>
-                <p>Note that \(m,k\), and \(t\) represent mass, the moment of inertia of the box, and time respectively.</p>
+                <p>
+                    Note that \(m,k\), and \(t\) represent mass, the moment of inertia of the box, and time respectively. <br>
+                    All physical parameters in this simulation can be changed, and the example below shows a box with significantly more mass than the 
+                    jack. Both the jack and the box start at rest.
+                </p>
 
                 <h2>Video of Simulation</h2>
                 <div class="video-container" style="margin-top: 50px; margin-bottom: 50px;">
@@ -78,7 +82,7 @@
                 </div>
                 
                 <p>The frames and coordinate transforms seen in Figure 1 were implemented in the 
-                    <i>Definition of Variables, Constants, and Transforms</i> section. A function called "se3sym" was used to take \(x\), \(y\),
+                    <i>Definition of Variables, Constants, and Transforms</i> section of the code at the bottom of the page. A function called "se3sym" was used to take \(x\), \(y\),
                      and \(\theta\) data in order to create SE3 transformation matrices. These matrices take the form:</p>
 
                 <p>

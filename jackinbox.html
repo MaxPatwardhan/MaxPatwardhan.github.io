@@ -1,7 +1,8 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>MaxPatwardhan.github.io - Haptic/Robot Telemanipulation System</title>
+    <title>MaxPatwardhan.github.io - Jack-In-Box</title>
+    <link rel="icon" type="image/png" href="images/personal/icon.png">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -37,11 +38,19 @@
             <section class="post">
                 <header class="major">
                     <h1>Jack-In-Box Lagrangian Physics Simulation</h1>
-                    <h3>Programmed and Simulated in Python</h3>
+                    <h3><a href="https://github.com/MaxPatwardhan/jackinbox">Simulated and Visualized in Python</a></h3>
                 </header>
-                <p>In this project, I used Lagrangian physics to simulate a "Jack-In-Box". The jack experiences impacts against
-                    the walls of the box, which is under the force of gravity as well as an external forcing function.
-                    The jack is subject to only the force of gravity. The external forces applied to the box are defined as follows:<br>
+                <h2>Video of Simulation:</h2>
+                <div class="video-container" style="margin-top: 50px; margin-bottom: 50px;">
+                    <video controls autoplay loop muted playsinline>
+                        <source src="images/jackinbox/jackinBox.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <p>In this project, I used Lagrangian physics to simulate a "Jack-In-Box" from scratch. This simulation was written in python, primarily relying on the Sympy
+                    and Numpy libraries. In the above video, the jack experiences impacts against
+                    the walls of the box, which is under the force of gravity as well as externally applied forces.
+                    Meanwhile the jack is subject to only the force of gravity. The external forces applied to the box are defined as follows:<br>
 
                     The force in the \(y\)-direction:
                     \[
@@ -64,26 +73,16 @@
                     jack. Both the jack and the box start at rest.
                 </p>
 
-                <h2>Video of Simulation</h2>
-                <div class="video-container" style="margin-top: 50px; margin-bottom: 50px;">
-                    <video controls autoplay loop muted playsinline>
-                        <source src="images/jackinbox/jackinBox.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-
-
-                The 
-
+                The drawing below shows the various transforms used for each object used in the simulation.
                 <div>
                     <span class="image fit">
                         <img src="images/jackinbox/finalDiagram.jpeg" alt="Image"/>
                     </span>
                 </div>
                 
-                <p>The frames and coordinate transforms seen in Figure 1 were implemented in the 
+                <p>The frames and coordinate transforms seen in the figure were implemented in the 
                     <i>Definition of Variables, Constants, and Transforms</i> section of the code at the bottom of the page. A function called "se3sym" was used to take \(x\), \(y\),
-                     and \(\theta\) data in order to create SE3 transformation matrices. These matrices take the form:</p>
+                     and \(\theta\) data in order to create SE(3) transformation matrices. These matrices take the form:</p>
 
                 <p>
                     \[

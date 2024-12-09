@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   var popup = document.getElementById('popup-about');
-  var closeBtn = popup.querySelector('.close-button');
+  var closeBtn = document.querySelector('.close-button');
 
   // Close popup when the close button is clicked
   closeBtn.addEventListener('click', function () {
-    popup.classList.remove('show');
+    document.querySelector('.popup').style.display = 'none'
   });
 
   // Check if this popup has already been shown in this session

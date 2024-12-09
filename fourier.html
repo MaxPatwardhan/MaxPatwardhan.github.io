@@ -126,18 +126,61 @@
                         $$ \cosh(\beta_n L) \cos(\beta_n L) = -1. $$
                     </p>
 
+                    <p>
+                        Solving for the coefficients in \( F(s) \) gives:
+                    </p>
+                    <p>
+                        $$ F_{n}(s)  = c_{4} \left [ \left (     \sinh(\sqrt{\beta_{n}}s)-\sin(\sqrt{\beta_{n}}s) \right )
+                         +\left ( \frac{\cos(\sqrt{\beta_{n}}L)+\cosh(\sqrt{\beta_{n}}L)}{\sin(\sqrt{\beta_{n}}L)-\sinh(\sqrt{\beta_{n}}L)} \right ) \left (\cosh(\sqrt{\beta_{n}}s)-\cos(\sqrt{\beta_{n}}s)  \right ) \right ]$$
+                    </p>
+
+                    <p>
+                        Where \( n \) is any one of the infinite roots of the above equation. Substituting this back into our original separation of variables, we yield:
+                    </p>
+                    <p>$$ u(s, t) = \sum_{n=1}^\infty F_n(s) \left[a_n(t) \sin(\sqrt{\lambda_n} t) + b_n(t) \cos(\sqrt{\lambda_n} t)\right]. $$</p>
+
                     <h3>Variation of Parameters</h3>
-                    <p>To include a sinusoidal forcing function at the fixed end (\( u(0, t) = A \sin(\Omega t) \)), the solution is extended as:</p>
-                    <p>$$ u(s, t) = \sum_{n=1}^\infty F_n(s) \left[a_n(t) \sin(q_n t) + b_n(t) \cos(q_n t)\right]. $$</p>
-                    <p>Time-dependent coefficients \( a_n(t) \) and \( b_n(t) \) are found using orthogonality principles and Cramer's rule.</p>
+                    <p>
+                        In order to solve the wave equation with known forcing, the method of Variation of Parameters
+                         will be applied to the results found in the previous section. Variation of Parameters
+                        is a method used to solved differential equations with known forcing. Since the original partial 
+                        differential equation is second-order with respect to time, it can be regarded
+                        similarly to a second-order, linear ordinary differential equation with constant coefficients
+                        and a time-dependent forcing function.
+                        Variation of Parameters can be executed in the following manner: once the 
+                        homogeneous solution is known (note that the homogeneous solution must contains two linearly
+                        independent solutions to the homogeneous problem, given that the differential equation is
+                        second-order with respect to time), it can be assumed that the particular solutions is of the
+                        same form as the homogeneous solution, except for the fact that the coefficients now depend
+                        on time. Two equations are needed to solve for the time-dependent coefficients. The first
+                        equation can be obtained by noting that the proposed solution must satisfy the differential
+                        equation. The second equation can come from a variety of places, but in this case, the second
+                        equation will come from a clever assumption that will greatly simplify the calculations 
+                        involved in this method. Once the two equations are obtained, the time-dependent coefficients
+                        can be determined, and the particular solution can be determined.<br>
+
+                        Quite frankly, I don't feel like writing out the LaTeX, so I will leave it to you, dear reader,
+                        to find it in the PDF at the bottom of the page. I am nice enough to show you the final values of \( a_n \) and \( b_n \) 
+                        for a particular solution of the boundary condition where \( u(0,t) = A\sin(\Omega t): \)
+                    </p>
+
+                    <p>
+                        $$ a_{n}(t) = \frac{AB_{n}\Omega^2\left (\sin(\sqrt{\lambda_n}t)\sin(\Omega t)\cos(\Omega t) -\Omega \sin(\sqrt{\lambda_n}t)\cos(\Omega t)\right )}{(\sqrt{\lambda_n} - \Omega)(\sqrt{\lambda_n} + \Omega)}, $$
+                        $$ b_{n}(t) = \frac{AB_{n}\Omega^2\left (\sqrt{\lambda_n}\sin(\sqrt{\lambda_n}t)\sin(\Omega t) +\Omega \cos(\sqrt{\lambda_n}t)\cos(\Omega t)\right )}{(\sqrt{\lambda_n} - \Omega)(\sqrt{\lambda_n} + \Omega)}. $$
+
+                    </p>
                 </section>
 
                 <!-- Experiment -->
                 <section id="experiment">
                     <h2>Numerical Experiment</h2>
-                    <p>An experiment was conducted to identify harmonic frequencies of cantilevered beams of varying lengths. A waveform generator drove the beams, and a strobe light was used to visualize harmonic modes. Observed data was compared with predictions.</p>
-                    <span class="image fit"><img src="images/beam_experiment.png" alt="Experimental Setup" /></span>
-                    <h3>Experimental Harmonic Frequencies</h3>
+                    <p>An experiment was conducted to identify harmonic frequencies of cantilevered beams of varying lengths. A waveform generator drove the beams, 
+                        and a strobe light was used to visualize harmonic modes. Observed data was compared with predictions.</p>
+                    <span class="image fit"><img src="images/fourier/beams.jpeg" alt="Experimental Setup" /></span>
+                    <h3>Model Simulated Results</h3>
+                    <span class="image fit"><img src="images/fourier/Beam Lambdas.jpg" alt="Experimental Setup" /></span>
+                    <p>The above plot shows predicted harmonic frequencies generated from the equation in the <b>Separation of Variables Section:</b> \( \cosh(\beta_n L) \cos(\beta_n L) = -1 \).</p>
+                    <h3>Model Predicted Harmonic Frequencies</h3>
                     <table>
                         <thead>
                             <tr>
@@ -148,23 +191,80 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>13.1</td><td>21.4</td><td>138</td><td>-</td></tr>
-                            <tr><td>12.1</td><td>24.5</td><td>165</td><td>-</td></tr>
-                            <tr><td>11.1</td><td>35</td><td>179</td><td>-</td></tr>
+                            <tr><td>13.1</td><td>23.9</td><td>149.1</td><td>417.4</td></tr>
+                            <tr><td>12.1</td><td>27.9</td><td>174.7</td><td>489.2</td></tr>
+                            <tr><td>11.1</td><td>33.3</td><td>207.6</td><td>N/A</td></tr>
+                            <tr><td>9.1</td><td>49.2</td><td>308.9</td><td>N/A</td></tr>
+                            <tr><td>8.1</td><td>62.2</td><td>389.9</td><td>N/A</td></tr>
+                            <tr><td>7.1</td><td>81.0</td><td>507.5</td><td>N/A</td></tr>
+                            
                         </tbody>
                     </table>
-                </section>
-
-                <!-- Results -->
-                <section id="results">
-                    <h2>Results</h2>
-                    <p>Theoretical and experimental harmonic frequencies showed a 10-15% deviation, attributed to damping effects and imperfect experimental setups.</p>
+                    
+                    <h3>Experimental Results</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Length (cm)</th>
+                                <th>\( \omega_1 \) (Hz)</th>
+                                <th>\( \omega_2 \) (Hz)</th>
+                                <th>\( \omega_3 \) (Hz)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>13.1</td><td>21.4</td><td>138</td><td>N/A</td></tr>
+                            <tr><td>12.1</td><td>24.5</td><td>165</td><td>N/A</td></tr>
+                            <tr><td>11.1</td><td>35</td><td>179</td><td>N/A</td></tr>
+                            <tr><td>9.1</td><td>44</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>8.1</td><td>56</td><td>N/A</td><td>N/A</td></tr>
+                            <tr><td>7.1</td><td>69</td><td>N/A</td><td>N/A</td></tr>
+                            
+                        </tbody>
+                    </table>
+                    <p>
+                        The values collected during the experiment were consistently below the values predicted
+                        by the analysis, and the error of these measurements ranged from 10% to 15%. This error
+                        can likely be attributed to the experimental setup. Note that all six beams were connected
+                        during the experiment. In addition, at the beginning of the experiment, each beam was
+                        equally spaced, but as the data was being collected, the vibrations caused the beams to
+                        move and distorted the spacing between each beam. These factors, combined with the
+                        loose fastening of the beam to the vibrating pin, would likely cause some damping in the
+                        vibrations of each beam. While there are other potential factors that could be the cause of
+                        the discrepancy, these sources of dampening are the likely reason the results were below the
+                        predicted values. Interestingly, there was one single measurement where the measured value
+                        was actually larger than the predicted value, which occurred for the first harmonic frequency
+                        of the 11 centimeter beam. The difference in results is likely due to environmental factors 
+                        that caused damping which were not included in our model <br>
+                        The predicted and experimentally determined values are quite similar. However, it was not
+                        possible to experimentally determine the node positions of the second harmonic frequencies
+                        for the beams that were 9 centimeters or shorter, nor any frequencies for the third harmonic,
+                        as it was decided that trying to test those frequencies could have resulted in damage to the
+                        experimental equipment.
+                    </p>
                 </section>
 
                 <!-- Conclusion -->
                 <section id="conclusion">
                     <h2>Conclusion</h2>
-                    <p>This project demonstrates the effectiveness of mathematical modeling in predicting beam dynamics. Future research could explore alternative beam geometries and varying forcing functions.</p>
+                    <p>
+                        In this project, a partial differential equation was introduced to extend the wave equation
+                        and describe the vibrations of stiff beam. By using the method of Separation of Variables,
+                        a spatial domain equation and time domain equation were determined, and combined to
+                        ultimately determine a solution describing the transverse displacement of the beam for the
+                        homogeneous case, where the beam is fixed at one end and free to move at the other end.
+                        Next, the boundary conditions were modified to account for the fact that the beam is
+                        vibrated at a known frequency at the fixed end and free to move at the other end. To
+                        solve this partial differential equation with a time-dependent forcing function, the method of
+                        Variation of Parameters was applied. A solution describing the transverse displacement of
+                        the vibrating beam, including equations that describe the time-dependent coefficients of this solution, were found.
+                        Finally, an experiment was carried out, where a series variable-length cantilever beams
+                        were oscillated at various frequencies. The experimental frequencies could be
+                        compared against expected frequencies. It was shown that the experimental frequencies were
+                        10-15% lower than what was numerically calculated. There are many potential reasons for
+                        this, the most likely of which was a partial damping effect at the base of the resonance strips.
+                        In addition, it was shown that there is no rational step between harmonic frequencies of
+                        strings, rather there exists an ever-changing ratio between each fundamental harmonics.
+                    </p>
                 </section>
             </section>
         

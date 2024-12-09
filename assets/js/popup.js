@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
   var closeBtn = document.querySelector('.close-button');
 
   closeBtn.addEventListener('click', function() {
-    popup.classList.remove('show');
+    //popup.classList.remove('show');
+    document.querySelector('.popup').style.display = 'none'
   });
 
   // Check if popup has already been shown this session

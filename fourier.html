@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>MaxPatwardhan.github.io - Vibrations of a Cantilevered Beam</title>
+    <link rel="icon" type="image/png" href="images/personal/icon.png">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo">Home</a>
+        </header>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li><a href="index.html">Projects</a></li>
+                <li><a href="elements.html">About Me</a></li>
+            </ul>
+            <ul class="icons">
+                <li><a href="https://github.com/MaxPatwardhan" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                <li><a href="https://www.linkedin.com/in/maxwell-patwardhan" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- Post -->
+            <section class="post">
+                <header class="major">
+                    <h2>Fourier Model of Cantilevered <br>Beam Vibrations</h2>
+                    <h3>An Analytical and Experimental Study</h3>
+                    <p>December 2021 - In collaboration with Aria Mundy and Korben Smart</p>
+                </header>
+
+                <!-- Abstract -->
+                <section id="Background">
+                    <h2>Background</h2>
+                    <p>
+                        This project investigated the vibrations of a cantilevered beam using modified wave equations that account for bending resistance. Analytical models based 
+                        on Separation of Variables and Variation of Parameters were developed, and experiments were conducted to validate harmonic frequency predictions. 
+                    </p>
+                    <figure>
+                        <img src="images/fourier/beamModes.jpg" alt="Beam Modes" width="500"/>
+                        <figcaption>
+                            Example diagram of multiple vibrational modes.
+                            Source: <a href="https://www.researchgate.net/figure/Mode-shapes-and-natural-frequencies-for-the-first-three-modes-of-flexural-vibration-of_fig6_273452232" target="_blank">Original Figure</a>.
+                        </figcaption>
+                    </figure>
+
+                    <p>
+                        Cantilevered beams are commonly encountered in engineering, one such common example is that of an aircraft wing. For this application and many other applications, it is imperative to rigorously 
+                        understand the behavior of cantilevered beams under an induced, time-varying loads. In this project, we extended the classical wave equation to include bending resistance, producing models suitable for 
+                        predicting vibrations in stiff beams. Beam deflection is governed by fourth-order partial differential equations. Cantilever beams 
+                        are unique in that they are fixed at one end and free at the other, requiring special boundary conditions for analysis. This project explores the homogeneous case using Separation 
+                        of Variables and introduces a sinusoidal forcing function via Variation of Parameters to develop a model that was tested against experimental results.
+                    </p>
+                </section>
+
+                <!-- Model Development -->
+                <section id="model-development">
+                    <h2>Model Development</h2>
+                    <h3>The Wave Equation for Beams</h3>
+                    <p>The equation of motion for a cantilevered beam includes a fourth-order spatial derivative and a second order temporal derivative:</p>
+                    <p>$$ \rho \frac{\partial^2 u}{\partial t^2} = -Ek^2 \frac{\partial^4 u}{\partial s^4}, $$</p>
+                    <p>where \( u(s, t) \) is the transverse displacement, \( \rho \) is material density, \( E \) is Young's modulus, and \( k \) is the radius of gyration. The boundary conditions for a cantilevered beam are:</p>
+                    <ul>
+                        <li>\( u(0, t) = 0 \): No displacement at the fixed end.</li>
+                        <li>\( \frac{\partial u}{\partial s}(0, t) = 0 \): No rotation at the fixed end.</li>
+                        <li>\( \frac{\partial^2 u}{\partial s^2}(L, t) = 0 \): No bending moment at the free end.</li>
+                        <li>\( \frac{\partial^3 u}{\partial s^3}(L, t) = 0 \): No shear force at the free end.</li>
+                    </ul>
+
+                    <h3>Separation of Variables</h3>
+                    <p>A common method for solving PDEs is assuming that their solution(s) are a product of single-variable functions, allowing you to easily calculate their partial derivatives.</p>
+                    <p>Using the assumption \( u(s, t) = F(s)G(t) \), the equation is separated into spatial and temporal components:</p>
+                    <p>$$ \frac{G''(t)}{G(t)} = -\frac{E k^2}{\rho} \frac{F''''(s)}{F(s)} = \lambda, $$</p>
+                    <p>yielding solutions for \( G(t) \) and \( F(s) \). The spatial solution is expanded as:</p>
+                    <p>$$ F(s) = c_1 \cos(\beta s) + c_2 \sin(\beta s) + c_3 \cosh(\beta s) + c_4 \sinh(\beta s). $$</p>
+                    <p>Applying boundary conditions leads to quantized frequencies (\( \beta_n \)) satisfying:</p>
+                    <p>$$ \cosh(\beta_n L) \cos(\beta_n L) = -1. $$</p>
+
+                    <h3>Variation of Parameters</h3>
+                    <p>To include a sinusoidal forcing function at the fixed end (\( u(0, t) = A \sin(\Omega t) \)), the solution is extended as:</p>
+                    <p>$$ u(s, t) = \sum_{n=1}^\infty F_n(s) \left[a_n(t) \sin(q_n t) + b_n(t) \cos(q_n t)\right]. $$</p>
+                    <p>Time-dependent coefficients \( a_n(t) \) and \( b_n(t) \) are found using orthogonality principles and Cramer's rule.</p>
+                </section>
+
+                <!-- Experiment -->
+                <section id="experiment">
+                    <h2>Numerical Experiment</h2>
+                    <p>An experiment was conducted to identify harmonic frequencies of cantilevered beams of varying lengths. A waveform generator drove the beams, and a strobe light was used to visualize harmonic modes. Observed data was compared with predictions.</p>
+                    <span class="image fit"><img src="images/beam_experiment.png" alt="Experimental Setup" /></span>
+                    <h3>Experimental Harmonic Frequencies</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Length (cm)</th>
+                                <th>\( \omega_1 \) (Hz)</th>
+                                <th>\( \omega_2 \) (Hz)</th>
+                                <th>\( \omega_3 \) (Hz)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>13.1</td><td>21.4</td><td>138</td><td>-</td></tr>
+                            <tr><td>12.1</td><td>24.5</td><td>165</td><td>-</td></tr>
+                            <tr><td>11.1</td><td>35</td><td>179</td><td>-</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Results -->
+                <section id="results">
+                    <h2>Results</h2>
+                    <p>Theoretical and experimental harmonic frequencies showed a 10-15% deviation, attributed to damping effects and imperfect experimental setups.</p>
+                </section>
+
+                <!-- Conclusion -->
+                <section id="conclusion">
+                    <h2>Conclusion</h2>
+                    <p>This project demonstrates the effectiveness of mathematical modeling in predicting beam dynamics. Future research could explore alternative beam geometries and varying forcing functions.</p>
+                </section>
+            </section>
+        
+            <h2>Original Paper</h2>
+                <iframe src="images/fourier/APPM_4350___Final_Group.pdf" width="100%" height="800px" title="Vibrations of a Cantilevered Beam" style="margin-bottom: 50px;"></iframe>
+                
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <section>
+                <h3>Contact</h3>
+                <p>Email: <a href="mailto:maxwellpatwardhan@gmail.com">maxwellpatwardhan@gmail.com</a></p>
+            </section>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

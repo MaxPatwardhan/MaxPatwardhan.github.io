@@ -4829,9 +4829,9 @@ input, select, textarea {
 		width: 100%;
 		height: 100%;
 		background: rgba(0, 0, 0, 0.5);
-		display: none; /* Default to hidden */
-		align-items: center;
-		justify-content: center;
+		display: flex; /* Enable Flexbox maybe change this to 'none' if it breaks */
+		align-items: center; /* Center vertically */
+		justify-content: center; /* Center horizontally */
 	  }
 	  .popup.show {
 		display: flex;
@@ -4856,4 +4856,14 @@ input, select, textarea {
 		  display: none !important; /* force it hidden on larger screens */
 		}
 	  }
+	  figure {
+		text-align: center;
+		margin: 1rem auto;
+	}
+	
+	figcaption {
+		font-size: 0.9rem;
+		color: #555;
+		margin-top: 0.5rem;
+	}
 	  

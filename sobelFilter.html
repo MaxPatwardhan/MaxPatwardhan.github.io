@@ -1,12 +1,14 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>MaxPatwardhan.github.io - Haptic/Robot Telemanipulation System</title>
+    <title>MaxPatwardhan.github.io - Sobel Filtering Edge Detection Algorithm</title>
     <link rel="icon" type="image/png" href="images/personal/icon.png">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body class="is-preload">
 
@@ -22,7 +24,6 @@
         <nav id="nav">
             <ul class="links">
                 <li><a href="index.html">Projects</a></li>
-
                 <li><a href="elements.html">About Me</a></li>
             </ul>
             <ul class="icons">
@@ -37,12 +38,84 @@
             <!-- Post -->
             <section class="post">
                 <header class="major">
-                    <h1>Sobel Filtering Edge Detection Algorithm</h1>
-				</header>
-                <h2>Ahoy there matie, this page be under construction!</h2>
-                <span class="image fit"><img src="images/metamaterial/construction.png" alt="" /></span>
-                <p><i>This image is brought to you by the modern wonders of AI. Certainly this technology is worth the hundreds of billions of dollars being poured into it.</i></p>
+                    <h1>Sobel Edge Detection Algorithm</h1>
+                    <h2>Image Filtering for Mapping</h2>
+                    <p>Personal Project - December 2022</p>
+                </header>
 
+                <!-- Background -->
+                <section id="background">
+                    <h2>Background</h2>
+                    <p>
+                        Robotics is an interdisciplinary field requiring expertise in computer science, mechanical design, electronics, and applied mathematics. Autonomous robots often rely on image 
+                        processing to navigate and make decisions effectively. This project focuses on a crucial aspect of robotics: reducing the computational burden of image data through filtering.
+                    </p>
+                </section>
+
+                <!-- Importance of Filtering -->
+                <section id="importance">
+                    <h2>The Importance of Filtering and Edge Detection</h2>
+                    <p>Robotic systems equipped with cameras generate vast amounts of data. For example, a camera with a resolution of 1920x1080 operating at 30 frames per second produces 
+                        approximately:</p>
+
+                    <p>$$
+                        \underbrace{1920 \times 1080}_{\text{Resolution}} \times 
+                        \underbrace{3}_{\text{Color channels}}\times 
+                        \underbrace{30}_{\text{Frame rate}} = 
+                        1.87 \times 10^8 \, \text{bytes/second.}
+                        $$
+                    </p>    
+                    <p>This data load is computationally prohibitive for real-time processing. Filters reduce data volume while retaining information critical to robot tasks like path planning 
+                        and object detection. This project implements convolution-based filters, which efficiently process image data using mathematical operations.
+                    </p>
+                </section>
+
+                <!-- Convolution-Based Filtering -->
+                <section id="convolution">
+                    <h2>Convolution-Based Filtering</h2>
+                    <p>Convolution is the mathematical foundation of image filtering. The continuous convolution operation is defined as:</p>
+                    <p>
+                        $$ (f * g)(x) = \int_{-\infty}^\infty f(\tau)g(x - \tau) \, d\tau. $$
+                    </p>
+                    <p>For images, we use a discrete form:</p>
+                    <p>
+                        $$ (f * g)[x, y] = \sum_{i=-n}^n \sum_{j=-m}^m f[x - i, y - j]g[i, j], $$
+                    </p>
+                    <p>where \( f \) is the image and \( g \) is the filter kernel. The Gaussian filter smooths images by applying a weighted average, while the Sobel filter detects edges by computing pixel intensity gradients.</p>
+                </section>
+
+                <!-- Gaussian Denoising Filter -->
+                <section id="gaussian">
+                    <h2>Gaussian Denoising Filter</h2>
+                    <p>The Gaussian filter reduces noise by averaging pixel values based on a Gaussian distribution. Its kernel matrix can be represented as:</p>
+                    <p>
+                        $$ g[x, y] = \begin{bmatrix} 1 & 1 & 1 \\ 1 & 2 & 1 \\ 1 & 1 & 1 \end{bmatrix}. $$
+                    </p>
+                    <p>The weight (\( \sigma \)) determines the influence of neighboring pixels. After applying this filter, the image is significantly smoothed, making subsequent edge detection more effective.</p>
+                </section>
+
+                <!-- Sobel Edge Detection -->
+                <section id="sobel">
+                    <h2>The Sobel Operator</h2>
+                    <p>The Sobel filter calculates gradients in horizontal (\( S_x \)) and vertical (\( S_y \)) directions:</p>
+                    <p>
+                        $$ S_x = \begin{bmatrix} 1 & 0 & -1 \\ 2 & 0 & -2 \\ 1 & 0 & -1 \end{bmatrix}, \quad
+                        S_y = \begin{bmatrix} 1 & 2 & 1 \\ 0 & 0 & 0 \\ -1 & -2 & -1 \end{bmatrix}. $$
+                    </p>
+                    <p>To compute edge intensity, the gradient magnitude is calculated as:</p>
+                    <p>
+                        $$ G = \sqrt{(S_x * f)^2 + (S_y * f)^2}. $$
+                    </p>
+                    <p>The result is an edge-detected image, retaining essential features for robot path planning while discarding redundant data.</p>
+                    <span class="image fit"><img src="images/metamaterial/sobel_output.png" alt="Sobel Edge Detection Output" /></span>
+                </section>
+
+                <!-- Analysis and Conclusion -->
+                <section id="conclusion">
+                    <h2>Analysis and Conclusion</h2>
+                    <p>The processed image is orders of magnitude smaller than the original, reducing the computational expense of localization and decision-making. Without preprocessing, robots cannot handle the raw data load effectively, resulting in delayed or inaccurate actions.</p>
+                    <p>By applying Gaussian smoothing followed by Sobel filtering, this project highlights the critical role of image processing in robotics and demonstrates the practicality of mathematical techniques in solving real-world engineering challenges.</p>
+                </section>
             </section>
 
         </div>

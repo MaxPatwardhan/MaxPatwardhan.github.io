@@ -37,12 +37,62 @@
             <!-- Post -->
             <section class="post">
                 <header class="major">
-                    <h1>Aircraft-Automatically Deployable Flight Recorder</h1>
+                    <h1>Aircraft-Automatic Deployable Flight Recorder</h1>
+                    <h3>Capstone Project in Collaboration with Boeing Inc. <br> and the University of Colorado Boulder</h3>
 				</header>
-                <h2>Boeing Inc. and University of Colorado Boulder</h2>
-                <h2>Ahoy there matie, this page be under construction!</h2>
+
+                <h2>Background</h2>
+                <p>
+                    Following the disappearance of Malaysian Airlines Flight Flight 370, the Federal Aviation Administration
+                    required the implementation of a safe method for securing flight data on passenger aircraft. Due to differing
+                    international policy on streaming data from aircraft, Boeing Inc. tasked our team with developing a modular
+                    flight-recorder capable of collecting, collating, and securing the data generated generated during a flight.
+                </p>
+                <span class="image fit"><img src="images/aadfr/bodyIndicator.png" alt="" /></span>
+
+                <h2>Overview of Our Solution</h2>
+                <p>
+                    The Aircraft-Automatic Deployable Flight Recorder (A-ADFR) is capable of continually storing over <b>48 hours</b> 
+                    of encrypted flight data. Its small, modular design allows it to be stored in the fuselage, wings, flight deck, the tail 
+                    of the aircraft, allowing for high redundancy. The device deploys when commanded by external control computers onboard the aircraft, 
+                    or when its internal pressure sensor reads a submerged to a depth <b>4 &plusmn; 1 meters</b>. Once deployed the A-ADFR will transmit
+                    its location data on a <b>406 MHz</b> frequency band to the COSPAS-SARSAT satellite network for over <b>72 hours</b> so that it may 
+                    be located by Search and Rescue efforts.
+                </p>
+
+                <h3>Electronic System</h3>
+                <p>
+                    My main contribution to this project was the end-to-end development and implementation of the electronic system. I designed a PCB
+                    that powers all peripheral onboard electronics, automatically switches between the aircraft and internal power supply, controls 
+                    the airbag deployment, and charges/manages the onboard Lithium Polymer battery. There is also a Raspberry Pi onboard which manages
+                    and stores the data streamed from the aircraft. The system also contains a transceiver and an antenna for the aforementioned 
+                    radio communication capabilities.
+                </p>
+
+                <h4>Design of Custom PCB</h4>
+                <div style="text-align: center;">
+                    <img src="images/aadfr/pcbCADrender.png" alt="" style="display: block; margin: 0 auto; max-width: 70%;" />
+                </div>
+
+                <h4>Bill of Materials</h4>
+                <span class="image fit"><img src="images/aadfr/BOM.png" alt="" /></span>
+                <h3>Housing and Airbags</h3>
+                <p>
+                    The mechanical system is comprised of a cylindrical housing and three radially-symmetric airbags. The airbags serve 
+                    multiple functions, including assisting the housing in breaking free from the debris of the crashed aircraft, enhancing 
+                    visibility for locating the device, and providing buoyancy. Within the housing there are two separate chambers, one for 
+                    electronics and one for facilitating the chemical reaction which inflates the airbags. The housing is rated to an <b>IPX8</b>
+                    waterproofing standard is also <b>self-buoyant</b>, even in the event of multiple ruptured airbags. The Airbag-to-Housing connection
+                    consists of swiveling one-way valves, letting each airbag inflate while preventing water ingress to the housing in the event of a 
+                    rupture.
+                </p>
+
                 <span class="image fit"><img src="images/metamaterial/construction.png" alt="" /></span>
-                <p><i>This image is brought to you by the modern wonders of AI. Certainly this technology is worth the hundreds of billions of dollars being poured into it.</i></p>
+                <p><i>This image is brought to you by the modern wonders of AI. Certainly this technology is worth the hundreds
+                     of billions of dollars being poured into it.</i></p>
+
+                <h2>Poster</h2>
+                 <span class="image fit"><img src="images/aadfr/poster.jpg" alt="" /></span>
 
             </section>
 

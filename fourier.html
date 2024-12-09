@@ -82,13 +82,44 @@
                     </ul>
 
                     <h3>Separation of Variables</h3>
-                    <p>A common method for solving PDEs is assuming that their solution(s) are a product of single-variable functions, allowing you to easily calculate their partial derivatives.</p>
-                    <p>Using the assumption \( u(s, t) = F(s)G(t) \), the equation is separated into spatial and temporal components:</p>
-                    <p>$$ \frac{G''(t)}{G(t)} = -\frac{E k^2}{\rho} \frac{F''''(s)}{F(s)} = \lambda, $$</p>
-                    <p>yielding solutions for \( G(t) \) and \( F(s) \). The spatial solution is expanded as:</p>
-                    <p>$$ F(s) = c_1 \cos(\beta s) + c_2 \sin(\beta s) + c_3 \cosh(\beta s) + c_4 \sinh(\beta s). $$</p>
-                    <p>Applying boundary conditions leads to quantized frequencies (\( \beta_n \)) satisfying:</p>
-                    <p>$$ \cosh(\beta_n L) \cos(\beta_n L) = -1. $$</p>
+                    <p>
+                        A common method for solving PDEs is assuming that their solution(s) are a product of single-variable functions, allowing you to easily calculate their partial derivatives. 
+                        This method is called <b>Separation of Variables</b> and is used to solve many different PDEs, notably the Heat Equation and Wave Equation.
+                    </p>
+                    <p>
+                        Using the aforementioned assumption \( u(s, t) = F(s)G(t) \), the equation is separated into spatial and temporal components. First \(\frac{\partial^4 u}{\partial s^4} = F''''(s)G(t) \),
+                         and \(\frac{\partial^2 u}{\partial t^2} = F(s)G''(t) \) are substituted into the equation to yield:
+                    </p>
+                    <p>
+                        $$ \rho F(s)G''(t) = E k^2 F''''(s)G(t).$$
+                    </p>
+                    <p>
+                        We can now collect like-terms and constants. Because we know the left-hand side of the equation does not vary spatially, and the right hand side does not vary temporally, 
+                        we can surmise that each side is equivalent to some negative constant, \( \lambda \), shown as:
+                    </p>
+                    <p>
+                        $$ \frac{G''(t)}{G(t)} = -\frac{E k^2}{\rho} \frac{F''''(s)}{F(s)} = \lambda .$$
+                    </p>
+                    <p>
+                        We can now create the following two equations:
+                    </p>
+                    <ol>
+                        <li>\( G''(t) = -\lambda G(t) \)</li>
+                        <li>\( F''''(s) = \lambda \frac{\rho}{E k^2} F(s) \)</li>
+                    </ol>
+
+                    <p>
+                        Equations <b>1</b> and <b>2</b> above can now be integrated, yielding solutions for \( G(t) \) and \( F(s) \). The spatial solution is expanded as:
+                    </p>
+                    <p>
+                        $$ F(s) = c_1 \cos(\beta s) + c_2 \sin(\beta s) + c_3 \cosh(\beta s) + c_4 \sinh(\beta s). $$
+                    </p>
+                    <p>
+                        Applying boundary conditions leads to quantized frequencies (\( \beta_n \)) satisfying:
+                    </p>
+                    <p>
+                        $$ \cosh(\beta_n L) \cos(\beta_n L) = -1. $$
+                    </p>
 
                     <h3>Variation of Parameters</h3>
                     <p>To include a sinusoidal forcing function at the fixed end (\( u(0, t) = A \sin(\Omega t) \)), the solution is extended as:</p>

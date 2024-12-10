@@ -4866,4 +4866,75 @@ input, select, textarea {
 		color: #555;
 		margin-top: 0.5rem;
 	}
+
+	/* Gallery layout */
+	.gallery {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 15px;
+		padding: 20px;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	/* Image styling */
+	.gallery img {
+		width: 100%;
+		height: auto;
+		border-radius: 10px;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+		transition: transform 0.3s, box-shadow 0.3s;
+	}
+
+	/* Hover effect for images */
+	.gallery img:hover {
+		transform: scale(1.05);
+		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+	}
+
+	/* Caption styling */
+	.caption {
+		text-align: center;
+		margin-top: 5px;
+		font-size: 14px;
+		color: #555;
+	}
+  
+	  .grid {
+		display: grid;
+		grid-template-columns: repeat(3, 200px);
+		justify-content: center;
+		align-content: center;
+		grid-gap: 10px;
+		height: 100vh;
+	  }
 	  
+	  .grid img {
+		width: 200px;
+		height: 200px;
+		cursor: pointer;
+	  }
+	  
+	  #lightbox {
+		position: fixed;
+		z-index: 1000;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, .8);
+		display: none;
+	  }
+	  
+	  #lightbox.active {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	  }
+	  
+	  #lightbox img {
+		max-width: 90%;
+		max-height: 80%;
+		padding: 4px;
+		background-color: black;
+		border: 2px solid white;
+	  }

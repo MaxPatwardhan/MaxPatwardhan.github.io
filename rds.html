@@ -44,26 +44,68 @@
 
                 
                 <h2>Background</h2>
-                <p>This project, developed as part of Northwestern University's selective capstone program in collaboration with Argonne National Laboratory, 
-                    focused on designing and implementing a sophisticated haptic-robot telemanipulation system. This system enables users to control a robotic finger and thumb
-                    using a haptic exoskeleton. I led the design, assembly, testing, and integration of the electronics for this project, creating dedicated PCB's for power,
-                     communication, control, and sensing.</p>
+                    <p>
+                        This project, developed as part of Northwestern University's selective capstone program in collaboration with Argonne National Laboratory, 
+                        focused on designing and implementing a sophisticated haptic-robot telemanipulation system. This system enables users to control a robotic finger and thumb
+                        using a haptic exoskeleton. I led the design, assembly, testing, and integration of the electronics for this project, creating dedicated PCB's for power,
+                        communication, control, and sensing.
+                    </p>
 
+                <h2>System Overview</h2>
+                    <p> The mechanical, electrical, and software components of this project were meticulously designed by our team, ultimately generating an original approach to the development a human-robot devices with unique advantages.
+                        Other haptic-robot hand systems struggle to adequately translate forces between the robot and the user, leaving rigid objects that the robot grasps feeling squishy for the operator.
+                        Common power transfer solutions do not work well in this application; gear-train solutions have backlash which is noticeable to operators, and pneumatic/fluid systems struggle to match 
+                        the force that the human hand can produce. To bypass these issues, we opted for a cable driven design powered by brushless DC motors that sit near the operator's palm. Doing this, we were able to remove any 
+                        play in the system and keep the mechanical design both slender and strong. 
+                        The cables allowed us to design core functionality revolving around a high gain controller, giving the operator an accurate representation of whatever the robot is interacting with.
+                        The system is comprised of distinct haptic and robotic elements for both fingers and thumbs, each equipped with two actuated degrees of 
+                        freedom, and a third passive degree of freedom, allowing natural and precise motion while maintaining a feasible design within the project time frame. 
+                        Power is supplied through a custom-designed PCB dubbed the 'power board', ensuring stable voltage regulation and robust fault protection for all components, 
+                        from high-torque motors to sensitive microcontrollers. Real-time communication is achieved via a dual CAN bus architecture, managed by a Teensy microcontroller and fault-tolerant 
+                        transceivers, enabling seamless data exchange across subsystems. High-resolution magnetic encoders provide critical feedback for motion control, while safety mechanisms, including 
+                        emergency stops and system monitoring, safeguard the operator and hardware. This integrated approach combines advanced engineering techniques in mechanics, electronics, and software to 
+                        deliver a highly capable and scalable robotic platform.
+                    </p>
+                <h2>Demonstration</h2>
+                    <div class="video-container" style="margin-top: 30px; margin-bottom: 60px;">
+                        <video controls autoplay loop muted playsinline>
+                            <source src="images/rds/highlight.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+
+                <h2>Image Gallery</h2>
                      <div class="box alt">
                         <div class="row gtr-50 gtr-uniform">
                             <div class="col-4">
                                 <span class="image fit">
-                                    <img src="images/rds/mechanical/hfinger.png" alt="" class="gallery-item" data-description="Description for hfinger image" />
+                                    <img src="images/rds/mechanical/hfinger.png" alt="" class="gallery-item" data-description="Model of Haptic Finger" />
                                 </span>
                             </div>
                             <div class="col-4">
                                 <span class="image fit">
-                                    <img src="images/rds/mechanical/thumb.png" alt="" class="gallery-item" data-description="Description for thumb image" />
+                                    <img src="images/rds/mechanical/rthumb.png" alt="" class="gallery-item" data-description="Model of Robot Thumb" />
+                                </span>
+                            </div>
+
+                            <div class="col-4">
+                                <span class="image fit">
+                                    <img src="images/rds/mechanical/rfinger.png" alt="" class="gallery-item" data-description="Model of Robot Finger" />
                                 </span>
                             </div>
                             <div class="col-4">
                                 <span class="image fit">
-                                    <img src="images/rds/mechanical/rfinger.png" alt="" class="gallery-item" data-description="Description for rfinger image" />
+                                    <img src="images/rds/mechanical/thumb.png" alt="" class="gallery-item" data-description="Model of Haptic Thumb" />
+                                </span>
+                            </div>
+                            <div class="col-4">
+                                <span class="image fit">
+                                    <img src="images/rds/power/pwr_noBG.png" alt="" class="gallery-item" data-description="Power regulation and distribution PCB a.k.a the 'Power Board'" />
+                                </span>
+                            </div>
+                            <div class="col-4">
+                                <span class="image fit">
+                                    <img src="images/rds/data/datanoBG.jpg" alt="" class="gallery-item" data-description="Communication and control PCB a.k.a the 'Data Board'" />
                                 </span>
                             </div>
                             <!-- Add more images as needed -->
@@ -79,43 +121,26 @@
                         </div>
                     </div>
 
-				
-				<div id="slideshow1" class="slideshow-container">
 
-                    <!-- Slides -->
-                    <div class="mySlides fade">
-                        <img src="images/rds/IMG_0840.jpg" style="width:100%">
-                    </div>
-
-                    <div class="mySlides fade">
-                        <img src="images/rds/IMG_0843.jpg" style="width:100%">
-                    </div>
-                    <div class="mySlides fade">
-                        <img src="images/rds/IMG_0734.jpg" style="width:100%">
-                    </div>
-                    <div class="mySlides fade">
-                        <img src="images/rds/IMG_0841.jpg" style="width:100%">
-                    </div>
-                    <div class="mySlides fade">
-                        <img src="images/rds/dataL.png" style="width:100%">
-                    </div>
-                    <div class="mySlides fade">
-                        <img src="images/rds/pwrL.png" style="width:100%">
-                    </div>
+                <h2>Electrical System</h3>
+                <h3>Power Board</h3>
+                <h3>Data Board</h3>
+                <h3>Controllers, Sensors, &amp; Peripherals</h3>
+                <h3>Bill of Materials</h3>
+                <iframe src="images/rds/BOM Electronics - Sheet1.pdf" width="100%" height="800px" title="BOM"></iframe>
                 
-                    <!-- Next and Previous Buttons -->
-                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                </div>
 
-				<div style="text-align:center">
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                    <span class="dot" onclick="currentSlide(4)"></span>
-                    <span class="dot" onclick="currentSlide(5)"></span>
-                    <span class="dot" onclick="currentSlide(6)"></span>
-                </div>
+                <h2>Robot Devices</h2>
+                <h3>Robot Finger</h3>
+                <h3>Robot Thumb</h3>
+                
+
+                <h2>Haptic Devices</h2>
+
+                <h3>Haptic Finger</h3>
+
+                <h3>Haptic Thumb</h3>
+
 
                 <h2>Project Goals</h2>
                 <ul>
@@ -142,9 +167,8 @@
                 <h2>Conclusion</h2>
                 <p>This haptic/robot telemanipulation system is a step forward in the integration of robotics with intuitive, real-time user interfaces. With this system, tasks previously requiring physical presence in challenging environments can now be managed remotely with precision and responsiveness.</p>
 				
-				<h2>Bill of Materials</h2>
-                <iframe src="images/rds/BOM Electronics - Sheet1.pdf" width="100%" height="800px" title="BOM"></iframe>
-                
+                <h4><a href="images/rds/rdsfinal-compressed.pdf">Final Presentation Slides Can Be Viewed Here</a></h4>
+
             </section>
 
         </div>

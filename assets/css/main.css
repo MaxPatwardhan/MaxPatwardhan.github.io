@@ -4980,14 +4980,15 @@ input, select, textarea {
 
 	.lightbox .description {
 		margin-top: 15px;
+		margin-left: 50px;
 		color: #fff;
 		font-size: 18px;
 	}
 
 	.lightbox span {
 		position: absolute;
-		top: 20px;
-		right: 30px;
+		top: 0px;
+		right: 200px;
 		font-size: 40px;
 		color: #fff;
 		cursor: pointer;
@@ -5011,5 +5012,7 @@ input, select, textarea {
 		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Adds a shadow for a "pop-out" effect */
 		z-index: 1; /* Brings the image above others if overlapping */
 	}
+
+
 
 

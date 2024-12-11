@@ -5015,6 +5015,12 @@ input, select, textarea {
 		z-index: 1; /* Brings the image above others if overlapping */
 	}
 
-
+	/* Center the date in the article header */
+	.center-date {
+		text-align: center; /* Centers the text horizontally */
+		margin: 0 auto; /* Ensures the element is centered in its container */
+		font-size: 20px; /* Adjust font size as needed */
+		color: #555; /* Optional: Change the text color */
+	}
 
 

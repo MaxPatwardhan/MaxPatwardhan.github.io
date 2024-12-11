@@ -151,24 +151,27 @@
                 
                 <hr />
 
-                <h2>Electrical System</h3>
-                <h3>Power Board</h3>
+                <h2 style="text-align: center; font-size: 2.5rem; " ><u>Electrical System</u></h2>
+                <h2>Power Board</h2>
                 <div class="box alt">
                     <div class="row gtr-50 gtr-uniform">
                         <div class="col-4">
                             <span class="image fit">
                                 <img src="images/rds/power/IMG_0840.jpg" alt="" class="gallery-item" data-description="A fully soldered board" />
+                                <p class="caption">Soldered Board</p>
                             </span>
                         </div>
                         <div class="col-4">
                             <span class="image fit">
                                 <img src="images/rds/power/pwrL.png" alt="" class="gallery-item" data-description="Power Board Layout (ground planes not shown)" />
+                                <p class="caption">Board Layout (Ground Plane Not Pictured)</p>
                             </span>
                         </div>
 
                         <div class="col-4">
                             <span class="image fit">
                                 <img src="images/rds/schematics/pwrS.png" alt="" class="gallery-item" data-description="Power Board Schematic" />
+                                <p class="caption">Electrical Schematic </p>
                             </span>
                         </div>
                     </div>
@@ -182,9 +185,69 @@
                         <span id="lightbox-close">&times;</span>
                     </div>
                 </div>
+                <ul>
+                    <li><strong>Functions:</strong>
+                        <ul>
+                            <li>Supplies all system motors with a maximum continuous power of <b>72 Watts</b>, with an estimated peak of <b>~200 Watts</b> (at <b>24VDC</b>)</li>
+                            <li>Supplies stable power to all motor controllers, sensors, and microprocessors at <b>3.3V</b>,  <b>5V</b>, and <b>12</b></li>
+                            <li>Ensures safe power delivery by incorporating protection mechanisms such as overcurrent and reverse polarity protection.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Features:</strong>
+                        <ul>
+                            <li><strong>Dual CAN Bus Architecture:</strong> Enables robust communication across multiple subsystems, handling high-speed data transfer with built-in fault tolerance.</li>
+                            <li><strong>Teensy Microcontroller:</strong> Acts as the brain of the system, executing control algorithms and managing data flow.</li>
+                            <li><strong>Communication Transceivers:</strong> MCP2561 CAN transceivers ensure reliable message delivery even in electrically noisy environments.</li>
+                            <li><strong>Modular Design:</strong> Easily integrates with other subsystems via standardized connectors.</li>
+                            <li><strong>Real-Time Indicators:</strong> RGB LEDs display system status, such as communication errors or operational readiness.</li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+                <div class="row aln-top gtr-uniform">
+                                        <!-- List -->
+                    <div class="col-7">
+                        <ul class="adjacent-list" style ="width: 100%;">
+                            <li><strong>Circuit Subsystems:</strong>
+                                <ul>
+                                    <li><strong>24 Volt Domain:</strong> Supplies power at various voltage levels (e.g., 5V, 12V) required by different subsystems.</li>
+                                    <li><strong>12 Volt Domain:</strong> Supplies power at various voltage levels (e.g., 5V, 12V) required by different subsystems.</li>
+                                    <li><strong>5 Volt Domain</strong> 1.6mm</li>
+                                    <li><strong>Digital E-Stop</strong> </li>
+                                    <li><strong>User Indicators:</strong> LEDs provide real-time feedback for the status of each power domain.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Table -->
+                    <div class="col-5">
+                        <table class="compact-table">
+                            <thead>
+                                <tr><th>Feature</th><th>Value</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>Layers</strong></td><td>2</td></tr>
+                                <tr><td><strong>Dimensions</strong></td><td>75mm &times; 55mm</td></tr>
+                                <tr><td><strong>Thickness</strong></td><td>1.6mm</td></tr>
+                                <tr><td><strong>Copper Thickness</strong></td><td>4 Oz./ft<sup>2</sup></td></tr>
+                                <tr><td><strong>Substrate</strong></td><td>FR-4</td></tr>
+                                <tr><td><strong>Track Spacing</strong></td><td>13 mil</td></tr>
+                                <tr><td><strong>Vias</strong></td><td>Tented</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                
+                
+                <p>The power board was custom-designed to support the diverse power requirements of the system's mechanical and electrical components. Its robust design ensures efficient power delivery while 
+                    safeguarding sensitive components from electrical faults. By incorporating advanced features like switching regulators and user-friendly status indicators, the power board plays a critical role 
+                    in maintaining system stability and reliability.</p>
+                
 
 
-                <h3>Data Board</h3>
+                <h2>Data Board</h2>
                 <div class="box alt">
                     <div class="row gtr-50 gtr-uniform">
                         <div class="col-4">
@@ -215,7 +278,45 @@
                     </div>
                 </div>
 
-                <h3>Controllers, Sensors, &amp; Peripherals</h3>
+                <div class="row aln-top gtr-uniform">
+                    <!-- List -->
+                    <div class="col-7">
+                        <ul class="adjacent-list" style="width: 100%;">
+                            <li><strong>Key Features:</strong>
+                                <ul>
+                                    <li><strong>Microcontroller:</strong> Powered by a Teensy 4.1, handling system control and data exchange.</li>
+                                    <li><strong>Communication:</strong> Dual CAN bus architecture for robust and fault-tolerant communication between subsystems.</li>
+                                    <li><strong>Fault Tolerance:</strong> Includes MCP2561 CAN transceivers for reliable operation in noisy environments.</li>
+                                    <li><strong>Safety Features:</strong> Integrated emergency stop circuits to ensure immediate system shutdown during critical events.</li>
+                                    <li><strong>Indicators:</strong> RGB LEDs provide real-time feedback on communication and system status.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Table -->
+                    <div class="col-5">
+                        <table class="compact-table">
+                            <thead>
+                                <tr><th>Physical Aspect</th><th>Value</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>Layers</strong></td><td>2</td></tr>
+                                <tr><td><strong>Dimensions</strong></td><td>80mm &times; 55mm</td></tr>
+                                <tr><td><strong>Thickness</strong></td><td>1.6mm</td></tr>
+                                <tr><td><strong>Copper Thickness</strong></td><td>1 Oz./ft<sup>2</sup></td></tr>
+                                <tr><td><strong>Substrate</strong></td><td>FR-4</td></tr>
+                                <tr><td><strong>Minimum Track Spacing</strong></td><td>13 mil</td></tr>
+                                <tr><td><strong>Vias</strong></td><td>Tented</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <p>The data board serves as the central hub for communication and control in the system. Its integration of a high-performance Teensy microcontroller and fault-tolerant CAN bus architecture 
+                    ensures synchronized operation across all subsystems. The modular design simplifies integration and enhances system diagnostics through visual feedback.</p>
+
+
+                <h2>Controllers, Sensors, &amp; Peripherals</h2>
                 <div class="box alt">
                     <div class="row gtr-50 gtr-uniform">
                         <div class="col-4">
@@ -236,8 +337,7 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Lightbox -->
+                                <!-- Lightbox -->
                 <div id="lightbox" class="lightbox">
                     <div class="lightbox-content">
                         <img id="lightbox-image" src="" alt="Enlarged view" />
@@ -246,18 +346,39 @@
                     </div>
                 </div>
 
+                <h2>Encoder Board</h2>
+                <ul>
+                    <li><strong>Functions:</strong>
+                        <ul>
+                            <li>Provides precise positional feedback for motion control in the robotic and haptic devices.</li>
+                            <li>Interfaces with high-resolution magnetic encoders to measure joint angles and movements.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Features:</strong>
+                        <ul>
+                            <li><strong>High-Resolution Magnetic Encoders:</strong> AS5047P encoders deliver 12-bit resolution for accurate position tracking.</li>
+                            <li><strong>On-Axis and Off-Axis Configurations:</strong> Measures rotational positions directly at joints or indirectly via mechanical linkages.</li>
+                            <li><strong>Signal Conditioning:</strong> Capacitors filter noise to ensure stable and accurate readings.</li>
+                            <li><strong>Compact Design:</strong> Optimized for tight integration with mechanical components.</li>
+                            <li><strong>Secure Connections:</strong> Molex connectors provide reliable and easy-to-use electrical connections.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>The encoder board is essential for achieving precise motion control, ensuring that both the robotic and haptic devices operate with high accuracy. Its integration of magnetic encoders with advanced signal conditioning makes it a reliable source of positional data. The board's compact design and secure connectors facilitate seamless integration with other components, contributing to the system's overall efficiency and accuracy.</p>
+                                
+
+
                 <h3>Bill of Materials</h3>
                 <iframe src="images/rds/BOM Electronics - Sheet1.pdf" width="100%" height="800px" title="BOM"></iframe>
                 
                 <hr />
-                
-                <h2>Robot Devices</h2>
-                <h3>Robot Finger</h3>
+                <h2 style="text-align: center; font-size: 2.5rem; " ><u>Mechanical System</u></h2>
+
+                <h2>Robot Finger</h2>
                 <div style="text-align: center;">
                     <img src="images/rds/mechanical/rfinger.png" alt="" style="display: block; margin: 0 auto; max-width: 60%;" />
                 </div>
-
-                <p><!--<span class="image right"><img src="images/rds/mechanical/rfinger.png" alt=""  style="width: 600px; height: auto;"/></span> -->
+                <p>
                     The robot finger subsystem serves as a mechanical analog to a human finger, capable of mimicking natural curl motions through its two actively actuated degrees of freedom. A pulley-based 
                     transmission system provides a 4:1 gear ratio at each joint, ensuring high torque and smooth motion. The system is powered by high-performance Maxon EC 45 flat motors, which deliver the torque 
                     required for precise manipulation while maintaining a compact form factor. The design prioritizes structural integrity, with components fabricated using a combination of water jet cutting and 
@@ -266,11 +387,7 @@
                     in coupling the linkages and streamlining the assembly process. Future improvements could include integrating compact gearboxes or modular components to enhance assembly speed and reduce weight.
                 </p>
 
-                <h3>Robot Thumb</h3>
-                <!--<div style="text-align: center;">
-                    <img src="images/rds/mechanical/rthumb.png" alt="" style="display: block; margin: 0 auto; max-width: 60%;" />
-                </div> -->
-
+                <h2>Robot Thumb</h2>
                 <p><span class="image right"><img src="images/rds/mechanical/rthumb.png" alt=""  style="width: 600px; height: auto;"/></span>
                     The robot thumb subsystem closely emulates human thumb kinematics, featuring two actuated degrees of freedom that enable waggle and curl motions. 
                     The waggle joint achieves a 7.33:1 transmission ratio using Maxon ECX Torque 22XL motors, ensuring smooth and powerful actuation. The coupled curl joints, operating at a 7.94:1 ratio, 
@@ -280,10 +397,7 @@
                     focus on minimizing friction in the cable-driven mechanism and optimizing the coupling between waggle and curl motions to enhance overall efficiency and ease of assembly.
                 </p>
 
-                <h2>Haptic Devices</h2>
-
-                <h3>Haptic Finger</h3>
-
+                <h2>Haptic Finger</h2>
                 <p><span class="image right"><img src="images/rds/mechanical/hfinger.png" alt=""  style="width: 600px; height: auto;"/></span>
                     The haptic finger subsystem replicates the kinematics of a human finger, enabling two actively controlled degrees of freedom—Metacarpophalangeal (MCP) and Proximal Interphalangeal (PIP)—while also 
                     accommodating one passive degree of freedom for natural motion. The design employs a robust cable-driven transmission system, where stainless steel cables are routed through precision pulleys to 
@@ -293,7 +407,7 @@
                     However, the routing of cables remains complex and can be further optimized to simplify assembly and maintenance procedures. Future iterations may explore integrating linear actuators to reduce 
                     the dependency on cable tensioning systems.
                 </p>
-                <h3>Haptic Thumb</h3>
+                <h2>Haptic Thumb</h2>
                 <p><span class="image left"><img src="images/rds/mechanical/thumb.png" alt=""  style="width: 400px; height: auto;"/></span>
                     The haptic thumb subsystem is designed to facilitate intricate thumb movements, including waggle (abduction/adduction) and curl (flexion/extension). These two degrees of freedom are actively actuated, 
                     while an additional passive degree of freedom enhances user comfort during operation. The curl motion leverages a cable-driven mechanism with multiple idler pulleys and vented screws to maintain cable 

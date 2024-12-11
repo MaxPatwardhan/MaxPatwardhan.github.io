@@ -4915,13 +4915,19 @@ input, select, textarea {
 		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 	}
 
-	/* Caption styling */
 	.caption {
 		text-align: center;
 		margin-top: 5px;
-		font-size: 20px;
+		font-size: clamp(12px, 2vw, 16px);
 		color: #555;
 	}
+	
+	@media screen and (max-width: 768px) {
+		.caption {
+			font-size: 14px; /* Override clamp() for very small screens if needed */
+		}
+	}
+	
   
 	  .grid {
 		display: grid;
@@ -5036,10 +5042,50 @@ input, select, textarea {
 	/* Center the date in the article header */
 	.center-date {
 		text-align: center; /* Centers the text horizontally */
-		margin: -.5rem; /* Ensures the element is centered in its container */
+		margin: 10px auto; /* Ensures the element is centered in its container */
 		font-size: 20px; /* Adjust font size as needed */
 		font-style: italic;
 		color: #555; /* Optional: Change the text color */
+
 	}
+	.compact-table {
+		width: 90%; /* Full width */
+		/*border-collapse: collapse;  Remove spacing between cells */
+		border-spacing: 0px;
+		margin: 10px auto; /* Reduced vertical spacing */
+		font-size: 1rem; /* Slightly smaller text */
+		border-radius: 8px;
+	}
+	
+	.compact-table th,
+	.compact-table td {
+		border: 1px solid #ddd; /* Light border for structure */
+		text-align: left; /* Align text to the left */
+		padding: 2px 4px; /* Reduced padding for compactness */
+
+	}
+	
+	.compact-table th {
+		background-color: #f7f7f721; /* Light background for headers */
+		font-weight: bold; /* Emphasize header text */
+		text-align: center; /* Center-align header text */
+		font-size: 1rem;
+
+	}
+	
+	.compact-table tr:nth-child(even) {
+		background-color: #f9f9f960; /* Subtle striped rows */
+	}
+	
+	.compact-table tr:hover {
+		background-color: #eaeaea; /* Highlight row on hover */
+	}
+	.adjacent-list {
+		list-style: none; /* Remove bullet points */
+		padding: 0;
+		
+		margin: 10px auto;
+	}
+	
 
 

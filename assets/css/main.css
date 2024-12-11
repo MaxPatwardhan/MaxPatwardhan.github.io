@@ -2639,8 +2639,9 @@ input, select, textarea {
 
 		.image.main {
 			display: block;
-			margin: 4rem 0;
+			margin: 2rem 0;
 			width: 100%;
+			text-align: center;
 		}
 
 			.image.main:first-child {
@@ -2648,7 +2649,9 @@ input, select, textarea {
 			}
 
 			.image.main img {
-				width: 100%;
+				display: block;
+				margin: 0 auto;
+				width: 60%;
 			}
 
 		@media screen and (max-width: 736px) {
@@ -2914,13 +2917,15 @@ input, select, textarea {
 
 	header {
 		cursor: default;
+		margin-bottom: .5rem;
+		margin-top: .5rem;
 	}
 
 		header > .date {
 			display: block;
 			font-size: 0.8rem;
 			height: 1;
-			margin: 0 0 1rem 0;
+			margin: 0 0 .5rem 0;
 			position: relative;
 		}
 
@@ -2934,9 +2939,15 @@ input, select, textarea {
 			line-height: 2;
 		}
 
+		header > h2 {
+			/*font-size: 1rem;*/
+			margin-top: -2.5rem;
+			margin-bottom: .5rem;
+		}
+
 		header > h2 + p {
 			font-size: 1rem;
-			margin-top: -0.75rem;
+			margin-top: -2.5rem;
 		}
 
 		header > h3 + p {
@@ -2950,7 +2961,7 @@ input, select, textarea {
 		}
 
 		header.major {
-			margin: 0 0 4rem 0;
+			margin: 0 0 1rem 0;
 			text-align: center;
 		}
 		header.major h1 {
@@ -2960,6 +2971,12 @@ input, select, textarea {
 		
 		header.major h2 {
 			font-size: 2.5rem !important;
+			margin-bottom: 0.5rem;
+		}
+		header.major h3 {
+			/*font-size: 2.5rem !important;*/
+			margin-bottom: 0.5rem;
+			margin-top: 0rem;
 		}
 
 			header.major > :last-child {
@@ -3792,17 +3809,18 @@ input, select, textarea {
 		}
 
 		#main > .post {
-			padding: 8rem 8rem 6rem 8rem ;
+			padding: 4rem 2rem 1rem 2rem ;
 		}
 
 			#main > .post header.major > .date {
-				margin-top: -2rem;
+				margin-top: -1rem;
+				margin-bottom: 1rem;
 			}
 
 			#main > .post header.major > h1, #main > .post header.major h2 {
 				font-size: 4rem;
 				line-height: 1.1;
-				margin: 0 0 2rem 0;
+				margin: 0 0 1rem 0;
 			}
 
 			#main > .post.featured {
@@ -3812,7 +3830,7 @@ input, select, textarea {
 			@media screen and (max-width: 1280px) {
 
 				#main > .post {
-					padding: 6rem 4rem 4rem 4rem ;
+					padding: 4rem 2rem 2rem 2rem ;
 				}
 
 			}
@@ -5018,8 +5036,9 @@ input, select, textarea {
 	/* Center the date in the article header */
 	.center-date {
 		text-align: center; /* Centers the text horizontally */
-		margin: 0 auto; /* Ensures the element is centered in its container */
+		margin: -.5rem; /* Ensures the element is centered in its container */
 		font-size: 20px; /* Adjust font size as needed */
+		font-style: italic;
 		color: #555; /* Optional: Change the text color */
 	}
 

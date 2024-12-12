@@ -35,6 +35,7 @@ body {
 
 ol, ul {
 	list-style: none;
+	line-height: 1.75rem;
 }
 
 blockquote, q {
@@ -178,6 +179,7 @@ input, select, textarea {
 	p {
 		text-align: justify;
 		margin: 0 0 2rem 0;
+		line-height: 1.75rem;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -2835,6 +2837,7 @@ input, select, textarea {
 		cursor: default;
 		list-style: none;
 		padding-left: 0;
+		line-height: 4rem;
 	}
 
 		ul.icons li {
@@ -3751,6 +3754,7 @@ input, select, textarea {
 			margin-bottom: 0;
 			padding-left: 0;
 			text-transform: uppercase;
+			line-height: 4rem;
 		}
 
 			#nav ul.links li {
@@ -5085,7 +5089,7 @@ input, select, textarea {
 		border: 1px solid #ddd; /* Light border for structure */
 		text-align: left; /* Align text to the left */
 		padding: 2px 4px; /* Reduced padding for compactness */
-
+		line-height: 1.65rem; 
 	}
 	
 	.compact-table th {
@@ -5093,7 +5097,7 @@ input, select, textarea {
 		font-weight: bold; /* Emphasize header text */
 		text-align: center; /* Center-align header text */
 		font-size: 1rem;
-
+		line-height: 2rem; 
 	}
 	
 	.compact-table tr:nth-child(even) {
@@ -5108,6 +5112,11 @@ input, select, textarea {
 		padding: 0;
 		
 		margin: 10px auto;
+	}
+	.table-stack {
+		display: flex;
+		flex-direction: column; /* Stack tables vertically */
+		gap: .1rem; /* Add spacing between tables */
 	}
 	
 

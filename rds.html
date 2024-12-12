@@ -59,7 +59,7 @@
                         This fast-paced project, developed as part of Northwestern University's selective capstone program in collaboration with Argonne National Laboratory, 
                         focused on designing and implementing a sophisticated haptic-robot telemanipulation system. Argonne National Laboratory desired a system that would allow 
                         their chemists to remotely work with radioactive materials, necessitating a highly precise-yet-strong haptic/robot system. Our solution enables users to control a robotic finger and thumb
-                        using a haptic exoskeleton. I drove the rapid, full-stack design and development of the project's electronics, ultimately providing a highly reliable, robust, and effortlessly integrable solution.
+                        using a haptic exoskeleton. I drove the rapid, full-stack design and development of the project's electronics, ultimately providing a highly reliable and easily integrable solution.
                     </p>
                     <h2>Image Gallery</h2>
                     <div class="box alt">
@@ -207,16 +207,18 @@
                     <li><strong>Functions:</strong>
                         <ul>
                             <li>Supplies all system motors with a maximum continuous power of <b>72 Watts</b>, with an estimated peak of <b>~200 Watts</b> (at <b>24VDC</b>)</li>
-                            <li>Supplies stable power to all motor controllers, sensors, and microprocessors at <b>3.3V</b>,  <b>5V</b>, and <b>12</b></li>
+                            <li>Provides stable power to all motor controllers, sensors, and microprocessors at <b>3.3V</b>, <b>5V</b>, and <b>12V</b></li>
+                            <li>Ensures operator and system safety with passive shutdown</li>
                             <li>Ensures safe power delivery by incorporating protection mechanisms such as overcurrent and reverse polarity protection.</li>
                         </ul>
                     </li>
-                    <li><strong>Features:</strong>
+                    <li><strong>Design Features:</strong>
                         <ul>
-                            <li><strong>Dual CAN Bus Architecture:</strong> Enables robust communication across multiple subsystems, handling high-speed data transfer with built-in fault tolerance.</li>
-                            <li><strong>Teensy Microcontroller:</strong> Acts as the brain of the system, executing control algorithms and managing data flow.</li>
-                            <li><strong>Communication Transceivers:</strong> MCP2561 CAN transceivers ensure reliable message delivery even in electrically noisy environments.</li>
-                            <li><strong>Modular Design:</strong> Easily integrates with other subsystems via standardized connectors.</li>
+                            <li><strong>Power Integrity</strong> Ground-plane is used minimally to maximize current return path. Filtering passives are properly selected based on present frequencies and vias are kept short. Signals on different planes cross orthogonally</li>
+                            <li><strong>Ample Connectivity:</strong> Screw terminals and shrouded XT-60 connectors allow for easy connectivity during set-up and debugging.</li>
+                            <li><strong>Robust Component Selection</strong> Switching regulation circuits are designed based off of manufacturer guidelines. Regulator circuits are designed with a factor of safety of 2 </li>
+                            <li><strong>Easy Assembly:</strong> Common, cheap passive components are used. The boards silkscreen lists each component which can be referenced in the BOM. The board can be easily assembled via reflow with the use of a stencil.</li>
+                            <li><strong>Safety &amp; Reliability:</strong> Operator and system are protected from many common threats with the inclusion of passive safety systems (see <i>'Threats'</i> table below).</li>
                             <li><strong>Real-Time Indicators:</strong> RGB LEDs display system status, such as communication errors or operational readiness.</li>
                         </ul>
                     </li>
@@ -229,41 +231,50 @@
                         <ul class="adjacent-list" style ="width: 100%;">
                             <li><strong>Circuit Subsystems:</strong>
                                 <ul>
-                                    <li><strong>24 Volt Domain:</strong> Supplies power at various voltage levels (e.g., 5V, 12V) required by different subsystems.</li>
-                                    <li><strong>12 Volt Domain:</strong> Supplies power at various voltage levels (e.g., 5V, 12V) required by different subsystems.</li>
-                                    <li><strong>5 Volt Domain</strong> 1.6mm</li>
-                                    <li><strong>Digital E-Stop</strong> </li>
-                                    <li><strong>User Indicators:</strong> LEDs provide real-time feedback for the status of each power domain.</li>
+                                    <li><strong>24 Volt Domain:</strong> Supplies power to a maximum of 3 motors,</li>
+                                    <li><strong>12 Volt Buck Regulator:</strong> Designed to provide stable power to medium-power subsystems, such as the motor controller shielded CAN network. It utilizes a switching buck voltage regulator to efficiently 
+                                                                                handle varying input voltages and loads, ensuring a smooth and denoised output suitable for operation-critical components</li>
+                                    <li><strong>5 Volt Buck Regulator</strong> Supplies low-voltage power to sensors, microcontroller, and encoders. It also employs a buck voltage regulator for high efficiency and stability, 
+                                                                                catering to sensitive and low-power electronic peripherals to maintain reliable performance</li>
+                                    <li><strong>Digital E-Stop System</strong> Controlled by I/O pins from the Data board, 3 transistors manage SPST Form A E-Stop Relays. Power to the motors can instantly be cut-off if the microcontrollers detect that the 
+                                                                                operator's or system's safety is in jeopardy </li>
+                                    <li><strong>User Indicators:</strong> LEDs indicate the operating state of each circuit to provide real-time feedback.</li>
                                 </ul>
                             </li>
                         </ul>
                     </div>
                     <!-- Table -->
                     <div class="col-5">
-                        <table class="compact-table">
-                            <thead>
-                                <tr><th>Feature</th><th>Value</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td><strong>Layers</strong></td><td>2</td></tr>
-                                <tr><td><strong>Dimensions</strong></td><td>75mm &times; 55mm</td></tr>
-                                <tr><td><strong>Thickness</strong></td><td>1.6mm</td></tr>
-                                <tr><td><strong>Copper Thickness</strong></td><td>4 Oz./ft<sup>2</sup></td></tr>
-                                <tr><td><strong>Substrate</strong></td><td>FR-4</td></tr>
-                                <tr><td><strong>Track Spacing</strong></td><td>13 mil</td></tr>
-                                <tr><td><strong>Vias</strong></td><td>Tented</td></tr>
-                            </tbody>
-                        </table>
+                        <div class="table-stack">
+                            <table class="compact-table">
+                                <thead>
+                                    <tr><th>Physical Characteristic</th><th>Value</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>Layers</strong></td><td>2</td></tr>
+                                    <tr><td><strong>Dimensions</strong></td><td>75mm &times; 55mm</td></tr>
+                                    <tr><td><strong>Thickness</strong></td><td>1.6mm</td></tr>
+                                    <tr><td><strong>Copper Thickness</strong></td><td>4 Oz./ft<sup>2</sup></td></tr>
+                                    <tr><td><strong>Substrate</strong></td><td>FR-4</td></tr>
+                                    <tr><td><strong>Track Spacing</strong></td><td>13 mil</td></tr>
+                                    <tr><td><strong>Vias</strong></td><td>Tented</td></tr>
+                                </tbody>
+                            </table>
+                            <table class="compact-table">
+                                <thead>
+                                    <tr><th>Threat</th><th>Mitigation Feature</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>Current Surge</strong></td><td>PPTC Thermistors</td></tr>
+                                    <tr><td><strong>Reverse Polarity</strong></td><td>Reverse Polarity Diodes &amp; Shrouded Connectors</td></tr>
+                                    <tr><td><strong>Supply Fault</strong></td><td>Form A Relays</td></tr>
+                                    <tr><td><strong>MCU Disconnect</strong></td><td>Form A Relays</td></tr>
+                                    <tr><td><strong>Back-EMF</strong></td><td>Shrouded Motor Controller</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
-                
-                
-                
-                <p>The power board was custom-designed to support the diverse power requirements of the system's mechanical and electrical components. Its robust design ensures efficient power delivery while 
-                    safeguarding sensitive components from electrical faults. By incorporating advanced features like switching regulators and user-friendly status indicators, the power board plays a critical role 
-                    in maintaining system stability and reliability.</p>
-                
-
+                </div> 
 
                 <h2>Data Board</h2>
                 <div class="box alt">
@@ -318,7 +329,7 @@
                     <div class="col-5">
                         <table class="compact-table">
                             <thead>
-                                <tr><th>Physical Aspect</th><th>Value</th></tr>
+                                <tr><th>Physical Characteristic</th><th>Value</th></tr>
                             </thead>
                             <tbody>
                                 <tr><td><strong>Layers</strong></td><td>2</td></tr>

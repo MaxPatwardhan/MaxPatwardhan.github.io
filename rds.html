@@ -31,6 +31,17 @@
             </ul>
         </nav>
 
+        <div id="myPopup" class="popup">
+            <div class="popup-content">
+              <span class="close-button">&times;</span>
+            <h3>Not so good a listener, are you?</h3>
+            <p>
+                Or you have a distaste for authority. Either way, I respect it. <br>
+                Enjoy your sub-optimal browsing experience 😉
+            </p>
+            </div>
+          </div> 
+
         <!-- Main -->
         <div id="main">
 
@@ -39,16 +50,16 @@
                 <header class="major">
                     <h2>Haptic/Robot Telemanipulation System</h2>
                     <h3>Argonne National Laboratory and Northwestern University</h3>
-                    <p>Selective Graduate Capstone Project; January 2024 - June 2024</p>
+                    <p>Selective Graduate Capstone Project; January 2024 - May 2024</p>
 				</header>
 
                 
                 <h2>Background</h2>
                     <p>
-                        This project, developed as part of Northwestern University's selective capstone program in collaboration with Argonne National Laboratory, 
+                        This fast-paced project, developed as part of Northwestern University's selective capstone program in collaboration with Argonne National Laboratory, 
                         focused on designing and implementing a sophisticated haptic-robot telemanipulation system. Argonne National Laboratory desired a system that would allow 
                         their chemists to remotely work with radioactive materials, necessitating a highly precise-yet-strong haptic/robot system. Our solution enables users to control a robotic finger and thumb
-                        using a haptic exoskeleton. 
+                        using a haptic exoskeleton. I drove the rapid, full-stack design and development of the project's electronics, ultimately providing a highly reliable, robust, and effortlessly integrable solution.
                     </p>
                     <h2>Image Gallery</h2>
                     <div class="box alt">
@@ -125,22 +136,29 @@
                       </div>
                   </div>
 
-                <h2>System Overview</h2>
-                    <p> The mechanical, electrical, and software components of this project were meticulously designed by our team in just five short months, ultimately generating an  approach to human-robot devices with unique advantages.
-                        Other haptic/robot hand systems struggle to adequately translate forces between the robot and the user, leaving rigid objects that the robot grasps feeling squishy for the operator.
-                        This is problematic if the operator needs to work with precision equipment to manipulate small objects.
-                        Common power transfer solutions do not work well in this application; gear-train solutions have backlash which is noticeable to operators, linkages are complex to design and would inhibit a 
-                        low-profile design, and pneumatic/hydraulic systems struggle to match  the force that the human hand can produce. To bypass these issues, we opted for a cable driven design 
-                        powered by brushless DC motors that sit near the operator's palm. Doing this, we were able to remove any play in the system and keep the mechanical design both slender and strong. 
-                        The cables allowed us to design core functionality revolving around a high gain controller, giving the operator an accurate representation of whatever the robot is interacting with.
-                        The system is comprised of distinct haptic and robotic elements for both fingers and thumbs, each equipped with two actuated degrees of 
-                        freedom, and a third passive degree of freedom, allowing natural and precise motion while maintaining a feasible design within the project time frame. <br> <br>
-                        I worked to design a modular electrical system for these robot and haptic devices, ultimately developing 3 different PCBs which handled the power, communication, and control of each subsystem. 
-                        Power is supplied through a custom-designed PCB dubbed the 'power board', providing 4 distinct power domains and stable voltage regulation with multiple user and system protections integrated. The 'data board' 
-                        facilitates real-time communication via a dual CAN bus architecture, managed by a Teensy microcontroller and fault-tolerant 
-                        transceivers, enabling data exchange across subsystems. High-resolution magnetic encoders provide critical feedback for motion control, while safety mechanisms, including 
-                        emergency stops and system monitoring, safeguard the operator and hardware. 
-                    </p>
+                    <div>
+                        <h2>System Overview</h2>
+                            <p> 
+                                Our team meticulously designed the mechanical, electrical, and software components of this project within just five months, ultimately developing a novel approach 
+                                to human-robot devices that offers distinct advantages over existing systems. Unlike other haptic or robotic hand systems that struggle to accurately translate forces 
+                                between the robot and the user—often causing rigid objects grasped by the robot to feel squishy to the operator—our design ensures precise force feedback. This 
+                                precision is crucial when operators need to work with delicate equipment to manipulate small objects. <br>
+        
+                                Traditional power transfer solutions fall short in this application: gear-train systems exhibit noticeable backlash, linkages are overly complex and hinder a low-profile 
+                                design, and pneumatic or hydraulic systems cannot match the force exerted by the human hand. To overcome these challenges, we chose a cable-driven design powered by 
+                                brushless DC motors positioned near the operator's palm. This approach eliminates system play while maintaining a slender and robust mechanical structure. The use of 
+                                cables enabled us to focus on a high-gain controller, providing operators with an accurate representation of the robot’s interactions.<br>
+                                
+                                The system comprises distinct haptic and robotic components for both fingers and thumbs, each featuring two actuated degrees of freedom and a third passive degree of 
+                                freedom. This configuration allows for natural and precise motion while ensuring the design remains feasible within the project’s timeframe. <br> 
+                                
+                                I developed a modular electrical system for these robotic and haptic devices, creating three different PCBs to manage power, communication, and control for each subsystem. The 'power board' 
+                                supplies and regulates power across four distinct domains, ensuring stable voltage with multiple user and system protections. The 'data board' supports real-time communication 
+                                through a dual CAN bus architecture, controlled by a Teensy microcontroller and equipped with fault-tolerant transceivers for both intra-system and inter-system communication. 
+                                High-resolution magnetic encoders deliver essential feedback for motion control, while integrated safety mechanisms, including emergency stops and system monitoring, protect both 
+                                the operator and the hardware. 
+                            </p>
+                    </div>
                 <h2>Demonstration</h2>
                     <div class="video-container" style="margin-top: 30px; margin-bottom: 60px;">
                         <video controls autoplay loop muted playsinline>
@@ -164,7 +182,7 @@
                         <div class="col-4">
                             <span class="image fit">
                                 <img src="images/rds/power/pwrL.png" alt="" class="gallery-item" data-description="Power Board Layout (ground planes not shown)" />
-                                <p class="caption">Board Layout (Ground Plane Not Pictured)</p>
+                                <p class="caption">Board Layout (Ground Planes Not Pictured)</p>
                             </span>
                         </div>
 
@@ -253,17 +271,20 @@
                         <div class="col-4">
                             <span class="image fit">
                                 <img src="images/rds/data/IMG_0843.jpg" alt="" class="gallery-item" data-description="A fully soldered board (Teensy Microcontroller not shown)" />
+                                <p class="caption">Soldered Board</p>
                             </span>
                         </div>
                         <div class="col-4">
                             <span class="image fit">
                                 <img src="images/rds/data/dataL.png" alt="" class="gallery-item" data-description="Data Board Layout (ground planes not shown)" />
+                                <p class="caption">Board Layout (Ground Planes Not Pictured)</p>
                             </span>
                         </div>
 
                         <div class="col-4">
                             <span class="image fit">
                                 <img src="images/rds/schematics/dataS.png" alt="" class="gallery-item" data-description="Data Board Schematic" />
+                                <p class="caption">Electrical Schematic</p>
                             </span>
                         </div>
                     </div>
@@ -305,7 +326,7 @@
                                 <tr><td><strong>Thickness</strong></td><td>1.6mm</td></tr>
                                 <tr><td><strong>Copper Thickness</strong></td><td>1 Oz./ft<sup>2</sup></td></tr>
                                 <tr><td><strong>Substrate</strong></td><td>FR-4</td></tr>
-                                <tr><td><strong>Minimum Track Spacing</strong></td><td>13 mil</td></tr>
+                                <tr><td><strong>Minimum Track Spacing</strong></td><td>3 mil</td></tr>
                                 <tr><td><strong>Vias</strong></td><td>Tented</td></tr>
                             </tbody>
                         </table>

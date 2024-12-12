@@ -2653,6 +2653,17 @@ input, select, textarea {
 				margin: 0 auto;
 				width: 60%;
 			}
+			@media (max-width: 1224px) {
+				.image.left, .image.right {
+					max-width: 60%; /* Increase allowed width for medium screens */
+					float: none; /* Remove float for better responsiveness */
+					margin: 0 auto 2rem auto; /* Center the image */
+				}
+			
+				.image.left img, .image.right img {
+					width: 100%; /* Ensure the image scales properly */
+				}
+			}
 
 		@media screen and (max-width: 736px) {
 
@@ -2664,6 +2675,18 @@ input, select, textarea {
 				margin: 2rem 0;
 			}
 
+		}
+		/* Add responsive adjustments */
+		@media (max-width: 768px) {
+			.image.left, .image.right {
+				float: none; /* Remove floating on smaller screens */
+				margin: 0 auto 2rem auto; /* Center the image */
+				max-width: 100%; /* Allow the image to take up full width */
+			}
+
+			.image.left img, .image.right img {
+				width: 100%; /* Ensure the image scales properly */
+			}
 		}
 
 	a.image {

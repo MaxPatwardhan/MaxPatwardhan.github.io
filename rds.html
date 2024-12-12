@@ -393,53 +393,52 @@
                 <iframe src="images/rds/BOM Electronics - Sheet1.pdf" width="100%" height="800px" title="BOM"></iframe>
                 
                 <hr />
-                <h2 style="text-align: center; font-size: 2.5rem; " ><u>Mechanical System</u></h2>
 
+                <h2 style="text-align: center; font-size: 2.5rem;"><u>Mechanical System</u></h2>
+                
                 <h2>Robot Finger</h2>
                 <div style="text-align: center;">
                     <img src="images/rds/mechanical/rfinger.png" alt="" style="display: block; margin: 0 auto; max-width: 60%;" />
                 </div>
                 <p>
-                    The robot finger subsystem serves as a mechanical analog to a human finger, capable of mimicking natural curl motions through its two actively actuated degrees of freedom. A pulley-based 
-                    transmission system provides a 4:1 gear ratio at each joint, ensuring high torque and smooth motion. The system is powered by high-performance Maxon EC 45 flat motors, which deliver the torque 
-                    required for precise manipulation while maintaining a compact form factor. The design prioritizes structural integrity, with components fabricated using a combination of water jet cutting and 
-                    CNC milling techniques. Stainless steel cables serve as the primary transmission medium, tensioned using screws and nuts to ensure consistent performance under varying loads. Magnetic encoders 
-                    are integrated for accurate positional feedback, enabling precise control of joint movements. While the subsystem demonstrates high torque efficiency and reliable performance, challenges persist 
-                    in coupling the linkages and streamlining the assembly process. Future improvements could include integrating compact gearboxes or modular components to enhance assembly speed and reduce weight.
+                    The robot finger subsystem is engineered to closely replicate human finger curling motions, featuring two actively actuated joints that deliver smooth, natural articulation. 
+                    Rather than relying on a traditional gear train, it uses a pulley-driven transmission with a 4:1 ratio at each joint, enhancing torque delivery while maintaining a compact profile. 
+                    High-performance Maxon EC 45 flat motors supply the requisite torque density without adding bulk. To ensure stability under load, stainless steel cables are tensioned using 
+                    simple screws and nuts, and magnetic encoders provide precise positional data for fine-tuned control. Structural components are fabricated through both water jet cutting and CNC 
+                    milling for accuracy and durability. While performance and torque efficiency meet design goals, refining linkage interfaces and streamlining the assembly process remains an ongoing priority.
                 </p>
-
+                
                 <h2>Robot Thumb</h2>
-                <p><span class="image right"><img src="images/rds/mechanical/rthumb.png" alt=""  style="width: 600px; height: auto;"/></span>
-                    The robot thumb subsystem closely emulates human thumb kinematics, featuring two actuated degrees of freedom that enable waggle and curl motions. 
-                    The waggle joint achieves a 7.33:1 transmission ratio using Maxon ECX Torque 22XL motors, ensuring smooth and powerful actuation. The coupled curl joints, operating at a 7.94:1 ratio, 
-                    are actuated by Maxon EC 45 FLAT motors, known for their compact design and high torque efficiency. The subsystem utilizes a robust cable-driven mechanism with multiple wraps and tensioning 
-                    blocks to maintain precise motion under high loads. Key components, including pulleys and tensioning assemblies, are CNC-machined for accuracy and durability. Manufacturing processes, such as 
-                    turning and milling, are employed to achieve tight tolerances, ensuring reliable coupling between mechanical components. While the design achieves its functional goals, future improvements could 
-                    focus on minimizing friction in the cable-driven mechanism and optimizing the coupling between waggle and curl motions to enhance overall efficiency and ease of assembly.
+                <p><span class="image right"><img src="images/rds/mechanical/rthumb.png" alt="" /></span>
+                    Similar to the robot finger, the robot thumb is tailored to replicate the dexterity and form factor of the human thumb, offering two actuated degrees of freedom to produce both 'waggle' (abduction/adduction: motion 
+                    that moves the thumb away from the palm) and 'curl' 
+                    (flexion/extension: curling or extending your thumb) motions. The 'waggle' joint operates at a 7.33:1 transmission ratio, driven by Maxon ECX Torque 22XL motors for steady, responsive motion. In contrast, the 'curl' 
+                    movement uses a 7.94:1 ratio powered by Maxon EC 45 Flat motors, chosen for their compact design and strong torque-to-size ratio. Multiple cable wraps, tensioning blocks, and 
+                    CNC-machined pulleys work together to maintain tension. High-precision machining, including turning and milling, ensures tight tolerances and 
+                    secure mechanical coupling. Similar to the finger, there are still some issues regarding tensioning which would likely be resolved by refining the pulley system and having an easier method for tensioning.
                 </p>
-
+                
                 <h2>Haptic Finger</h2>
-                <p><span class="image right"><img src="images/rds/mechanical/hfinger.png" alt=""  style="width: 600px; height: auto;"/></span>
-                    The haptic finger subsystem replicates the kinematics of a human finger, enabling two actively controlled degrees of freedom—Metacarpophalangeal (MCP) and Proximal Interphalangeal (PIP)—while also 
-                    accommodating one passive degree of freedom for natural motion. The design employs a robust cable-driven transmission system, where stainless steel cables are routed through precision pulleys to 
-                    achieve smooth actuation. To maintain optimal tension, the cables are terminated using vented screws and wing nuts, offering both reliability and ease of maintenance. The motors selected for this 
-                    subsystem are Maxon ECX Torque 22XL, chosen for their exceptional torque output, high efficiency, and compact design. Magnetic encoders provide real-time positional feedback, ensuring precise 
-                    motion tracking for enhanced haptic interaction. The subsystem is designed for modularity and ease of repair, featuring CNC-machined aluminum components for durability and weight reduction. 
-                    However, the routing of cables remains complex and can be further optimized to simplify assembly and maintenance procedures. Future iterations may explore integrating linear actuators to reduce 
-                    the dependency on cable tensioning systems.
+                <p><span class="image right"><img src="images/rds/mechanical/hfinger.png" alt="" /></span>
+                    The haptic finger subsystem recreates human finger dynamics, offering two actively controlled joints (MCP and PIP) plus an additional passive degree of freedom for more 
+                    more a more natural range of motion. Stainless steel cables, routed through machined pulleys, maintain precise motion transfer. Cables are tensioned using vented screws 
+                    and wing nuts, allowing convenient adjustments and steady performance over time. Similar to other designs Maxon ECX Torque 22XL motors drive the system and are mounted near the palm. The motors
+                    are placed in such a way that they do not interfere with the mounting of the haptic thumb.
                 </p>
+                
                 <h2>Haptic Thumb</h2>
-                <p><span class="image left"><img src="images/rds/mechanical/thumb.png" alt=""  style="width: 400px; height: auto;"/></span>
-                    The haptic thumb subsystem is designed to facilitate intricate thumb movements, including waggle (abduction/adduction) and curl (flexion/extension). These two degrees of freedom are actively actuated, 
-                    while an additional passive degree of freedom enhances user comfort during operation. The curl motion leverages a cable-driven mechanism with multiple idler pulleys and vented screws to maintain cable 
-                    tension. The waggle joint employs compact Maxon ECX motors for precise actuation and low inertia, optimizing performance for dynamic tasks. The modular thimble interface, made from flexible TPU material, 
-                    accommodates a wide range of thumb sizes while ensuring a secure and comfortable fit for users. The subsystem is designed to be lightweight and ergonomic, with CNC-machined components that contribute to 
-                    its durability and precision. However, cable friction during motion remains a challenge, necessitating further refinement in cable routing and pulley design. Future iterations may introduce additional 
-                    active degrees of freedom to replicate the complex movements of the thumb tip, enhancing the subsystem’s overall dexterity.
+                <p><span class="image left"><img src="images/rds/mechanical/thumb.png" alt="" style="width: 400px; height: auto;"/></span>
+                    The haptic thumb subsystem attempts to emulate the range of motion for the human thumb with only 2 driven degrees of freed. Similar to the robot thumb it offers 'waggle' and 'curl' motions enhanced by an additional passive degree of freedom. Cable 
+                    tension is managed via a series of idler pulleys and vented fasteners to achieve smooth, consistent engagement. Maxon ECX motors drive the both the 'waggle' and 'curl' motions, and a rotating
+                    fitting allows your thumb to freely swivel within the mechanism. A flexible TPU thimble interface accommodates various thumb sizes while preserving a 
+                    secure, ergonomic fit. CNC-machined elements support a sturdy yet lightweight structure. Friction in the cable system occasionally emerges during operation, but we believe this issue could
+                    be fixed with higher tolerance pulleys, and a less complex way to tension the cables.
                 </p>
-
                 <hr />
+                <h2 style="text-align: center; font-size: 2.5rem;"><u>Previous Prototypes and Iterations</u></h2>
 
+                
+                <hr />
                 <h4><a href="images/rds/rdsfinal-compressed.pdf">Final Presentation Slides Can Be Viewed Here</a></h4>
                 <h4><a href="https://github.com/NU-RDS-2024">Software GitHub Can Be Viewed Here</a></h4>
 
@@ -467,6 +466,6 @@
     <script src="assets/js/main.js"></script>
 	<script src="assets/js/slideshow.js"></script>
     <script src="assets/js/lbox.js"></script>
-
+    <script src="assets/js/popup1.js" defer></script>
 </body>
 </html>

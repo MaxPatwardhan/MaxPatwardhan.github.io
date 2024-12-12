@@ -277,7 +277,7 @@
                         </div>
                     </div>
                 </div> 
-
+<!-------------------------------------------------------------------------------------------------->
                 <h2>Data Board</h2>
                 <div class="box alt">
                     <div class="row gtr-50 gtr-uniform">
@@ -311,6 +311,26 @@
                         <span id="lightbox-close">&times;</span>
                     </div>
                 </div>
+                <ul>
+                    <li><strong>Functions:</strong>
+                        <ul>
+                            <li>Facilitates communication between subsystems through CAN transceivers and GPIO pins</li>
+                            <li>Provides seamless interaction between the microcontroller (Teensy) and peripherals</li>
+                            <li>Handles intersystem and intrasystem communication effectively</li>
+                            <li>Ensures data integrity with error detection mechanisms</li>
+                        </ul>
+                    </li>
+                    <li><strong>Design Features:</strong>
+                        <ul>
+                            <li><strong>Communication Support:</strong> Includes dual CAN transceivers for robust communication</li>
+                            <li><strong>Signal Integrity:</strong> Controlled impedance routing for high-speed signals</li>
+                            <li><strong>Modular Design:</strong> Screw terminals and pin headers allow for quick setup and debugging</li>
+                            <li><strong>Easy Debugging:</strong> Onboard LEDs indicate CAN activity, system health, and errors</li>
+                            <li><strong>Reliable Operation:</strong> Designed with noise filtering and redundant power lines for reliability</li>
+                            <li><strong>Compact Layout:</strong> Optimized for minimal space without sacrificing functionality</li>
+                        </ul>
+                    </li>
+                </ul>
 
                 <div class="row aln-top gtr-uniform">
                     <!-- List -->
@@ -329,26 +349,39 @@
                     </div>
                     <!-- Table -->
                     <div class="col-5">
-                        <table class="compact-table">
-                            <thead>
-                                <tr><th>Physical Characteristic</th><th>Value</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td><strong>Layers</strong></td><td>2</td></tr>
-                                <tr><td><strong>Dimensions</strong></td><td>80mm &times; 55mm</td></tr>
-                                <tr><td><strong>Thickness</strong></td><td>1.6mm</td></tr>
-                                <tr><td><strong>Copper Thickness</strong></td><td>1 Oz./ft<sup>2</sup></td></tr>
-                                <tr><td><strong>Substrate</strong></td><td>FR-4</td></tr>
-                                <tr><td><strong>Minimum Track Spacing</strong></td><td>3 mil</td></tr>
-                                <tr><td><strong>Vias</strong></td><td>Tented</td></tr>
-                            </tbody>
-                        </table>
+                        <div class="table-stack">
+                            <table class="compact-table">
+                                <thead>
+                                    <tr><th>Physical Characteristic</th><th>Value</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>Layers</strong></td><td>2</td></tr>
+                                    <tr><td><strong>Dimensions</strong></td><td>80mm &times; 55mm</td></tr>
+                                    <tr><td><strong>Thickness</strong></td><td>1.6mm</td></tr>
+                                    <tr><td><strong>Copper Thickness</strong></td><td>1 Oz./ft<sup>2</sup></td></tr>
+                                    <tr><td><strong>Substrate</strong></td><td>FR-4</td></tr>
+                                    <tr><td><strong>Minimum Track Spacing</strong></td><td>3 mil</td></tr>
+                                    <tr><td><strong>Vias</strong></td><td>Tented</td></tr>
+                                </tbody>
+                            </table>
+                            <table class="compact-table">
+                                <thead>
+                                    <tr><th>Threat</th><th>Mitigation Feature</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>Signal Noise</strong></td><td>Decoupling Capacitors</td></tr>
+                                    <tr><td><strong>Voltage Spikes</strong></td><td>Transient Voltage Suppressors</td></tr>
+                                    <tr><td><strong>Data Corruption</strong></td><td>Parity Check and Error Correction Protocols</td></tr>
+                                </tbody>
+                            </table>
+                    
+                        </div>
                     </div>
                 </div>
                 
                 <p>The data board serves as the central hub for communication and control in the system. Its integration of a high-performance Teensy microcontroller and fault-tolerant CAN bus architecture 
                     ensures synchronized operation across all subsystems. The modular design simplifies integration and enhances system diagnostics through visual feedback.</p>
-
+<!-------------------------------------------------------------------------------------------------->
 
                 <h2>Controllers, Sensors, &amp; Peripherals</h2>
                 <div class="box alt">
@@ -384,22 +417,69 @@
                 <ul>
                     <li><strong>Functions:</strong>
                         <ul>
-                            <li>Provides precise positional feedback for motion control in the robotic and haptic devices.</li>
-                            <li>Interfaces with high-resolution magnetic encoders to measure joint angles and movements.</li>
+                            <li>Measures high-resolution shaft positions using magnetic encoders</li>
+                            <li>Converts motor angular displacement into digital signals for processing</li>
+                            <li>Enables precise motion control for robotic subsystems</li>
+                            <li>Supports multi-axis encoder data processing</li>
                         </ul>
                     </li>
-                    <li><strong>Features:</strong>
+                    <li><strong>Design Features:</strong>
                         <ul>
-                            <li><strong>High-Resolution Magnetic Encoders:</strong> AS5047P encoders deliver 12-bit resolution for accurate position tracking.</li>
-                            <li><strong>On-Axis and Off-Axis Configurations:</strong> Measures rotational positions directly at joints or indirectly via mechanical linkages.</li>
-                            <li><strong>Signal Conditioning:</strong> Capacitors filter noise to ensure stable and accurate readings.</li>
-                            <li><strong>Compact Design:</strong> Optimized for tight integration with mechanical components.</li>
-                            <li><strong>Secure Connections:</strong> Molex connectors provide reliable and easy-to-use electrical connections.</li>
+                            <li><strong>High Precision:</strong> Supports absolute and incremental encoders for accuracy</li>
+                            <li><strong>Flexible Mounting:</strong> PCB is designed to mount adjacent to motor shafts</li>
+                            <li><strong>Compact and Modular:</strong> Small form factor ensures minimal space utilization</li>
+                            <li><strong>Real-Time Feedback:</strong> LEDs indicate encoder status and connection health</li>
+                            <li><strong>Durable Components:</strong> Uses robust and high-reliability connectors</li>
+                            <li><strong>Low Power Consumption:</strong> Optimized for efficient power usage</li>
                         </ul>
                     </li>
                 </ul>
-                <p>The encoder board is essential for achieving precise motion control, ensuring that both the robotic and haptic devices operate with high accuracy. Its integration of magnetic encoders with advanced signal conditioning makes it a reliable source of positional data. The board's compact design and secure connectors facilitate seamless integration with other components, contributing to the system's overall efficiency and accuracy.</p>
-                                
+                
+                <div class="row aln-top gtr-uniform">
+                    <!-- List -->
+                    <div class="col-7">
+                        <ul class="adjacent-list" style="width: 100%;">
+                            <li><strong>Circuit Subsystems:</strong>
+                                <ul>
+                                    <li><strong>Magnetic Encoders:</strong> Provides accurate position data</li>
+                                    <li><strong>Power Conditioning:</strong> Supplies stable power to encoders</li>
+                                    <li><strong>Signal Processing:</strong> Converts encoder signals into usable data for controllers</li>
+                                    <li><strong>Status Indicators:</strong> LEDs display encoder health</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Table -->
+                    <div class="col-5">
+                        <div class="table-stack">
+                            <table class="compact-table">
+                                <thead>
+                                    <tr><th>Physical Characteristic</th><th>Value</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>Layers</strong></td><td>2</td></tr>
+                                    <tr><td><strong>Dimensions</strong></td><td>50mm × 50mm</td></tr>
+                                    <tr><td><strong>Thickness</strong></td><td>1.6mm</td></tr>
+                                    <tr><td><strong>Copper Thickness</strong></td><td>1 Oz./ft<sup>2</sup></td></tr>
+                                    <tr><td><strong>Substrate</strong></td><td>FR-4</td></tr>
+                                    <tr><td><strong>Track Spacing</strong></td><td>10 mil</td></tr>
+                                    <tr><td><strong>Vias</strong></td><td>Plated</td></tr>
+                                </tbody>
+                            </table>
+                            <table class="compact-table">
+                                <thead>
+                                    <tr><th>Threat</th><th>Mitigation Feature</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>Magnetic Interference</strong></td><td>Shielded Connectors</td></tr>
+                                    <tr><td><strong>Signal Degradation</strong></td><td>Filtering Capacitors</td></tr>
+                                    <tr><td><strong>Connector Damage</strong></td><td>Reinforced Pin Headers</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                             
 
 
                 <h3>Bill of Materials</h3>

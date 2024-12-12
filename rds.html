@@ -231,14 +231,16 @@
                         <ul class="adjacent-list" style ="width: 100%;">
                             <li><strong>Circuit Subsystems:</strong>
                                 <ul>
-                                    <li><strong>24 Volt Domain:</strong> Supplies power to a maximum of 3 motors,</li>
-                                    <li><strong>12 Volt Buck Regulator:</strong> Designed to provide stable power to medium-power subsystems, such as the motor controller shielded CAN network. It utilizes a switching buck voltage regulator to efficiently 
-                                                                                handle varying input voltages and loads, ensuring a smooth and denoised output suitable for operation-critical components</li>
-                                    <li><strong>5 Volt Buck Regulator</strong> Supplies low-voltage power to sensors, microcontroller, and encoders. It also employs a buck voltage regulator for high efficiency and stability, 
-                                                                                catering to sensitive and low-power electronic peripherals to maintain reliable performance</li>
-                                    <li><strong>Digital E-Stop System</strong> Controlled by I/O pins from the Data board, 3 transistors manage SPST Form A E-Stop Relays. Power to the motors can instantly be cut-off if the microcontrollers detect that the 
-                                                                                operator's or system's safety is in jeopardy </li>
-                                    <li><strong>User Indicators:</strong> LEDs indicate the operating state of each circuit to provide real-time feedback.</li>
+                                    <li><strong><u>24 Volt Domain:</u></strong> Supplies power to a maximum of 3 motors,</li>
+                                    <li><strong><u>12 Volt Buck Regulator:</u></strong> Designed to provide stable power to medium-power subsystems, such as the motor controller shielded CAN network. It utilizes a 
+                                                                                <a href="https://www.digikey.com/en/products/detail/texas-instruments/LM2675MX-12-NOPB/366906">Texas Instruments switching buck regulator</a> to 
+                                                                                handle an input voltages range of <b>4.5V</b> to <b>60V</b>, ensuring a smooth and denoised output of up to <b>1A</b> suitable for operation-critical components</li>
+                                    <li><strong><u>5 Volt Buck Regulator</u></strong> Supplies low-voltage power to sensors, microcontroller, and encoders. It employs an 
+                                                                                <a href="https://www.mouser.com/ProductDetail/Analog-Devices-Maxim-Integrated/MAXM17572AMC%2BT?qs=Jm2GQyTW%2Fbjkm%2FUypR0kew%3D%3D">Analog Devices/Maxim Integrated switching buck regulator</a>
+                                                                                 to regulate an input voltages range of <b>4.5V</b> to <b>60V</b> with a maximum output of <b>1A</b>, catering to sensitive and low-power electronic peripherals.</li>
+                                    <li><strong><u>Digital E-Stop System</u></strong> Controlled by I/O pins from the Data board, 3 transistors manage SPST Form A E-Stop Relays. Power to the motors can instantly be cut-off if the microcontrollers detect that the 
+                                                                                operator's or system's safety is in jeopardy. </li>
+                                    <li><strong><u>Use Indicators:</u></strong> LEDs indicate the operating state of each circuit to provide real-time feedback.</li>
                                 </ul>
                             </li>
                         </ul>

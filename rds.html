@@ -204,24 +204,24 @@
                     </div>
                 </div>
                 <ul>
-                    <li><strong>Functions:</strong>
-                        <ul>
+                    <ul style="font-size: 1.1rem;"><strong>Functions:</strong>
+                        <ul style="font-size: 1rem;">
                             <li>Supplies all system motors with a maximum continuous power of <b>72 Watts</b>, with an estimated peak of <b>~200 Watts</b> (at <b>24VDC</b>)</li>
                             <li>Provides stable power to all motor controllers, sensors, and microprocessors at <b>3.3V</b>, <b>5V</b>, and <b>12V</b></li>
                             <li>Ensures operator and system safety with passive shutdown</li>
                             <li>Ensures safe power delivery by incorporating protection mechanisms such as overcurrent and reverse polarity protection.</li>
                         </ul>
-                    </li>
-                    <li><strong>Design Features:</strong>
-                        <ul>
+                    </ul>
+                    <ul style="font-size: 1.1rem;"><strong>Design Features:</strong>
+                        <ul style="font-size: 1rem;">
                             <li><strong>Power Integrity</strong> Ground-plane is used minimally to maximize current return path. Filtering passives are properly selected based on present frequencies and vias are kept short. Signals on different planes cross orthogonally</li>
                             <li><strong>Ample Connectivity:</strong> Screw terminals and shrouded XT-60 connectors allow for easy connectivity during set-up and debugging.</li>
-                            <li><strong>Robust Component Selection</strong> Switching regulation circuits are designed based off of manufacturer guidelines. Regulator circuits are designed with a factor of safety of 2 </li>
+                            <li><strong>Robust Component Selection</strong> Switching regulation circuits are designed based off of manufacturer guidelines. Regulator circuits are designed to mitigate input voltage spikes with a factor of safety of 2.5 </li>
                             <li><strong>Easy Assembly:</strong> Common, cheap passive components are used. The boards silkscreen lists each component which can be referenced in the BOM. The board can be easily assembled via reflow with the use of a stencil.</li>
                             <li><strong>Safety &amp; Reliability:</strong> Operator and system are protected from many common threats with the inclusion of passive safety systems (see <i>'Threats'</i> table below).</li>
                             <li><strong>Real-Time Indicators:</strong> RGB LEDs display system status, such as communication errors or operational readiness.</li>
                         </ul>
-                    </li>
+                    </ul>
 
                 </ul>
 
@@ -229,18 +229,18 @@
                                         <!-- List -->
                     <div class="col-7">
                         <ul class="adjacent-list" style ="width: 100%;">
-                            <li><strong>Circuit Subsystems:</strong>
-                                <ul>
-                                    <li><strong><u>24 Volt Domain:</u></strong> Supplies power to a maximum of 3 motors,</li>
-                                    <li><strong><u>12 Volt Buck Regulator:</u></strong> Designed to provide stable power to medium-power subsystems, such as the motor controller shielded CAN network. It utilizes a 
+                            <li style="font-size: 1.1rem;"><strong>Circuit Subsystems:</strong>
+                                <ul style="font-size: 1rem;">
+                                    <li><strong>24 Volt Domain:</strong> Input supply voltage to board. Routed to both regulator circuits as well as through electronic E-Stops to power motors &amp; motor controllers</li>
+                                    <li><strong>12 Volt Buck Regulator:</strong> Designed to provide stable power to medium-power subsystems, such as the motor controller shielded CAN network. It utilizes a 
                                                                                 <a href="https://www.digikey.com/en/products/detail/texas-instruments/LM2675MX-12-NOPB/366906">Texas Instruments switching buck regulator</a> to 
                                                                                 handle an input voltages range of <b>4.5V</b> to <b>60V</b>, ensuring a smooth and denoised output of up to <b>1A</b> suitable for operation-critical components</li>
-                                    <li><strong><u>5 Volt Buck Regulator</u></strong> Supplies low-voltage power to sensors, microcontroller, and encoders. It employs an 
+                                    <li><strong>5 Volt Buck Regulator</strong> Supplies low-voltage power to sensors, microcontroller, and encoders. It employs an 
                                                                                 <a href="https://www.mouser.com/ProductDetail/Analog-Devices-Maxim-Integrated/MAXM17572AMC%2BT?qs=Jm2GQyTW%2Fbjkm%2FUypR0kew%3D%3D">Analog Devices/Maxim Integrated switching buck regulator</a>
                                                                                  to regulate an input voltages range of <b>4.5V</b> to <b>60V</b> with a maximum output of <b>1A</b>, catering to sensitive and low-power electronic peripherals.</li>
-                                    <li><strong><u>Digital E-Stop System</u></strong> Controlled by I/O pins from the Data board, 3 transistors manage SPST Form A E-Stop Relays. Power to the motors can instantly be cut-off if the microcontrollers detect that the 
+                                    <li><strong>Digital E-Stop System</strong> Controlled by I/O pins from the Data board, 3 transistors manage SPST Form A E-Stop Relays. Power to the motors can instantly be cut-off if the microcontrollers detect that the 
                                                                                 operator's or system's safety is in jeopardy. </li>
-                                    <li><strong><u>Use Indicators:</u></strong> LEDs indicate the operating state of each circuit to provide real-time feedback.</li>
+                                    <li><strong>Use Indicators:</strong> LEDs indicate the operating state of each circuit to provide real-time feedback.</li>
                                 </ul>
                             </li>
                         </ul>
@@ -259,7 +259,7 @@
                                     <tr><td><strong>Copper Thickness</strong></td><td>4 Oz./ft<sup>2</sup></td></tr>
                                     <tr><td><strong>Substrate</strong></td><td>FR-4</td></tr>
                                     <tr><td><strong>Track Spacing</strong></td><td>13 mil</td></tr>
-                                    <tr><td><strong>Vias</strong></td><td>Tented</td></tr>
+                                    <tr><td><strong>Vias</strong></td><td>Tented, 0.3mm</td></tr>
                                 </tbody>
                             </table>
                             <table class="compact-table">
@@ -311,40 +311,32 @@
                         <span id="lightbox-close">&times;</span>
                     </div>
                 </div>
-                <ul>
-                    <li><strong>Functions:</strong>
-                        <ul>
-                            <li>Facilitates communication between subsystems through CAN transceivers and GPIO pins</li>
-                            <li>Provides seamless interaction between the microcontroller (Teensy) and peripherals</li>
-                            <li>Handles intersystem and intrasystem communication effectively</li>
-                            <li>Ensures data integrity with error detection mechanisms</li>
-                        </ul>
-                    </li>
-                    <li><strong>Design Features:</strong>
-                        <ul>
-                            <li><strong>Communication Support:</strong> Includes dual CAN transceivers for robust communication</li>
-                            <li><strong>Signal Integrity:</strong> Controlled impedance routing for high-speed signals</li>
-                            <li><strong>Modular Design:</strong> Screw terminals and pin headers allow for quick setup and debugging</li>
-                            <li><strong>Easy Debugging:</strong> Onboard LEDs indicate CAN activity, system health, and errors</li>
-                            <li><strong>Reliable Operation:</strong> Designed with noise filtering and redundant power lines for reliability</li>
-                            <li><strong>Compact Layout:</strong> Optimized for minimal space without sacrificing functionality</li>
-                        </ul>
-                    </li>
-                </ul>
 
                 <div class="row aln-top gtr-uniform">
                     <!-- List -->
                     <div class="col-7">
-                        <ul class="adjacent-list" style="width: 100%;">
-                            <li><strong>Key Features:</strong>
-                                <ul>
-                                    <li><strong>Microcontroller:</strong> Powered by a Teensy 4.1, handling system control and data exchange.</li>
-                                    <li><strong>Communication:</strong> Dual CAN bus architecture for robust and fault-tolerant communication between subsystems.</li>
-                                    <li><strong>Fault Tolerance:</strong> Includes MCP2561 CAN transceivers for reliable operation in noisy environments.</li>
-                                    <li><strong>Safety Features:</strong> Integrated emergency stop circuits to ensure immediate system shutdown during critical events.</li>
-                                    <li><strong>Indicators:</strong> RGB LEDs provide real-time feedback on communication and system status.</li>
+                        <ul class="adjacent-list">
+                            <ul style="font-size: 1.1rem;"><strong>Functions:</strong>
+                                <ul style="font-size: 1rem;">
+                                    <li>Provides <b>2 SPI ports</b>, <b>4 UART ports</b>, and <b>3 CAN busses</b> for connection to the microcontroller to support multiple types of peripherals</li>
+                                    <li>Directly commands subsystems motor controllers</li>
+                                    <li>Communicates between subsystems too coordinate movement between all 4 devices via an external CAN Bus</li>
+                                    <li>Controls activation of each motor E-Stop by direct interface with NPN BJT's on the power board</li>
+                                    <li>Connects Teensy Microcontroller to peripheral sensors and encoders</li>
+                                    <li>Displays system state with 3 RGB LED's</li>
+                                    <li>Provides <b>2 SPI</b>, <b>4 UART</b>, and <b>3 CAN</b> connections to the microcontroller to support multiple types of peripherals</li>
                                 </ul>
-                            </li>
+                            </ul>
+                            <ul style="font-size: 1.1rem;"><strong>Design Features:</strong>
+                                <ul style="font-size: 1rem;">
+                                    <li><strong>Expansion Support:</strong> Contains a surplus of I/O ports so that different peripherals &amp; components can be added in future</li>
+                                    <li><strong>Signal Integrity:</strong> Controlled impedance routing for high-speed signals, ground plane is minimally interrupted, stitching vias exist throughout the board to guarantee low-impedance return path</li>
+                                    <li><strong>Filtering:</strong> Bypass Capacitors at various power and GPIO pins act as Low Pass filters for the MCU  </li>
+                                    <li><strong>High Reparability:</strong> Teensy and CAN transceivers, the two most probable chips to burn out, are implemented in socket (P-DIP) packages for easy replacement.</li>
+                                    <li><strong>Easy Debugging:</strong> Onboard LEDs indicate CAN activity, Teensy Microcontroller is broken-out into headers for testing and scoping, and an onboard toggle switch allows for easy power cycling</li>
+                                    <li><strong>Compact Layout:</strong> Optimized for minimal space without sacrificing functionality</li>
+                                </ul>
+                            </ul>
                         </ul>
                     </div>
                     <!-- Table -->
@@ -360,8 +352,8 @@
                                     <tr><td><strong>Thickness</strong></td><td>1.6mm</td></tr>
                                     <tr><td><strong>Copper Thickness</strong></td><td>1 Oz./ft<sup>2</sup></td></tr>
                                     <tr><td><strong>Substrate</strong></td><td>FR-4</td></tr>
-                                    <tr><td><strong>Minimum Track Spacing</strong></td><td>3 mil</td></tr>
-                                    <tr><td><strong>Vias</strong></td><td>Tented</td></tr>
+                                    <tr><td><strong>Minimum Track Spacing</strong></td><td>6 mil</td></tr>
+                                    <tr><td><strong>Vias</strong></td><td>Tented, 0.3mm</td></tr>
                                 </tbody>
                             </table>
                             <table class="compact-table">
@@ -379,29 +371,37 @@
                     </div>
                 </div>
                 
-                <p>The data board serves as the central hub for communication and control in the system. Its integration of a high-performance Teensy microcontroller and fault-tolerant CAN bus architecture 
-                    ensures synchronized operation across all subsystems. The modular design simplifies integration and enhances system diagnostics through visual feedback.</p>
 <!-------------------------------------------------------------------------------------------------->
 
-                <h2>Controllers, Sensors, &amp; Peripherals</h2>
+                <h2>Encoder Boards</h2>
                 <div class="box alt">
                     <div class="row gtr-50 gtr-uniform">
-                        <div class="col-4">
+                        <div class="col-3">
                             <span class="image fit">
                                 <img src="images/rds/data/IMG_0734.jpg" alt="" class="gallery-item" data-description="A bare encoder board" />
+                                <p class="caption">Bare circular Board</p>
                             </span>
                         </div>
-                        <div class="col-4">
+                        <div class="col-3">
+                            <span class="image fit">
+                                <img src="images/rds/mechanical/f4.jpg" alt="" class="gallery-item" data-description="Encoder Board Schematic" />
+                                <p class="caption">Soldered Board Mounted to Haptic Thumb </p>
+                            </span>
+                        </div>
+                        <div class="col-3">
                             <span class="image fit">
                                 <img src="images/rds/data/EncL.png" alt="" class="gallery-item" data-description="Encoder Board Layout (ground planes not shown)" />
+                                <p class="caption">Board Layout (Ground Planes Not Pictured)</p>
                             </span>
                         </div>
 
-                        <div class="col-4">
+                        <div class="col-3">
                             <span class="image fit">
                                 <img src="images/rds/schematics/encS.png" alt="" class="gallery-item" data-description="Encoder Board Schematic" />
+                                <p class="caption">Electrical Schematic </p>
                             </span>
                         </div>
+
                     </div>
                 </div>
                                 <!-- Lightbox -->
@@ -412,39 +412,26 @@
                         <span id="lightbox-close">&times;</span>
                     </div>
                 </div>
-
-                <h2>Encoder Board</h2>
-                <ul>
-                    <li><strong>Functions:</strong>
-                        <ul>
-                            <li>Measures high-resolution shaft positions using magnetic encoders</li>
-                            <li>Converts motor angular displacement into digital signals for processing</li>
-                            <li>Enables precise motion control for robotic subsystems</li>
-                            <li>Supports multi-axis encoder data processing</li>
-                        </ul>
-                    </li>
-                    <li><strong>Design Features:</strong>
-                        <ul>
-                            <li><strong>High Precision:</strong> Supports absolute and incremental encoders for accuracy</li>
-                            <li><strong>Flexible Mounting:</strong> PCB is designed to mount adjacent to motor shafts</li>
-                            <li><strong>Compact and Modular:</strong> Small form factor ensures minimal space utilization</li>
-                            <li><strong>Real-Time Feedback:</strong> LEDs indicate encoder status and connection health</li>
-                            <li><strong>Durable Components:</strong> Uses robust and high-reliability connectors</li>
-                            <li><strong>Low Power Consumption:</strong> Optimized for efficient power usage</li>
-                        </ul>
-                    </li>
-                </ul>
                 
                 <div class="row aln-top gtr-uniform">
                     <!-- List -->
                     <div class="col-7">
-                        <ul class="adjacent-list" style="width: 100%;">
-                            <li><strong>Circuit Subsystems:</strong>
-                                <ul>
-                                    <li><strong>Magnetic Encoders:</strong> Provides accurate position data</li>
-                                    <li><strong>Power Conditioning:</strong> Supplies stable power to encoders</li>
-                                    <li><strong>Signal Processing:</strong> Converts encoder signals into usable data for controllers</li>
-                                    <li><strong>Status Indicators:</strong> LEDs display encoder health</li>
+                        <ul class="adjacent-list">
+                            <li style="font-size: 1.1rem;">
+                                <strong>Function:</strong>
+                                <ul style="font-size: 1rem;">
+                                    <li>The encoder board uses high resolution <b>14 bit</b> hall-effect rotary encoders to measure shaft positions providing feedback via <b>SPI</b> to the MCU and motor controller. 
+                                        Four different versions of this board were designed in order to satisfy each subteam's sizing and mounting constraints. Each of the four 
+                                        boards is of a very small form factor, also the layout and circuit of each is identical.</li>
+                                </ul>
+                            </li>
+                            <li style="font-size: 1.1rem;">
+                                <strong>Design Features:</strong>
+                                <ul style="font-size: 1rem;">
+                                    <li><strong>High Precision:</strong> Supports 14 bit resolution, or 0.022&deg;</li>
+                                    <li><strong>Low Profile</strong> Designed to fit within compact mechanical systems</li>
+                                    <li><strong>High Speed:</strong> Supports SPI clock rates up to 10MHz</li>
+                                    <li><strong>No Shielding required:</strong> Encoder is immune to external stray fields</li>
                                 </ul>
                             </li>
                         </ul>
@@ -458,12 +445,12 @@
                                 </thead>
                                 <tbody>
                                     <tr><td><strong>Layers</strong></td><td>2</td></tr>
-                                    <tr><td><strong>Dimensions</strong></td><td>50mm × 50mm</td></tr>
+                                    <tr><td><strong>Dimensions</strong></td><td>15mm r.</td></tr>
                                     <tr><td><strong>Thickness</strong></td><td>1.6mm</td></tr>
                                     <tr><td><strong>Copper Thickness</strong></td><td>1 Oz./ft<sup>2</sup></td></tr>
                                     <tr><td><strong>Substrate</strong></td><td>FR-4</td></tr>
-                                    <tr><td><strong>Track Spacing</strong></td><td>10 mil</td></tr>
-                                    <tr><td><strong>Vias</strong></td><td>Plated</td></tr>
+                                    <tr><td><strong>Track Spacing</strong></td><td>3 mil</td></tr>
+                                    <tr><td><strong>Vias</strong></td><td>Tented, 0.3mm</td></tr>
                                 </tbody>
                             </table>
                             <table class="compact-table">
@@ -471,62 +458,64 @@
                                     <tr><th>Threat</th><th>Mitigation Feature</th></tr>
                                 </thead>
                                 <tbody>
-                                    <tr><td><strong>Magnetic Interference</strong></td><td>Shielded Connectors</td></tr>
                                     <tr><td><strong>Signal Degradation</strong></td><td>Filtering Capacitors</td></tr>
-                                    <tr><td><strong>Connector Damage</strong></td><td>Reinforced Pin Headers</td></tr>
+                                    <tr><td><strong>Bad Connection</strong></td><td>Latching Molex Pico connectors</td></tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
-                             
+                <div style="clear: both;"></div>             
 
 
-                <h3>Bill of Materials</h3>
+                <h2>Bill of Materials</h2>
                 <iframe src="images/rds/BOM Electronics - Sheet1.pdf" width="100%" height="800px" title="BOM"></iframe>
                 
                 <hr />
-
-                <h2 style="text-align: center; font-size: 2.5rem;"><u>Mechanical System</u></h2>
-                
-                <h2>Robot Finger</h2>
-                <div style="text-align: center;">
-                    <img src="images/rds/mechanical/rfinger.png" alt="" style="display: block; margin: 0 auto; max-width: 60%;" />
+                <div>
+                    <h2 style="text-align: center; font-size: 2.5rem;"><u>Mechanical System</u></h2>
+                    
+                    <h2>Robot Finger</h2>
+                    <div style="text-align: center;">
+                        <img src="images/rds/mechanical/rfinger.png" alt="" style="display: block; margin: 0 auto; max-width: 60%;" />
+                    </div>
+                    <p>
+                        The robot finger subsystem is engineered to closely replicate human finger curling motions, featuring two actively actuated joints that deliver smooth, natural articulation. 
+                        Rather than relying on a traditional gear train, it uses a pulley-driven transmission with a 4:1 ratio at each joint, enhancing torque delivery while maintaining a compact profile. 
+                        High-performance Maxon EC 45 flat motors supply the requisite torque density without adding bulk. To ensure stability under load, stainless steel cables are tensioned using 
+                        simple screws and nuts, and magnetic encoders provide precise positional data for fine-tuned control. Structural components are fabricated through both water jet cutting and CNC 
+                        milling for accuracy and durability. While performance and torque efficiency meet design goals, refining linkage interfaces and streamlining the assembly process remains an ongoing priority.
+                    </p>
+                    
+                    <h2>Robot Thumb</h2>
+                    <p><span class="image right"><img src="images/rds/mechanical/rthumb.png" alt="" /></span>
+                        Similar to the robot finger, the robot thumb is tailored to replicate the dexterity and form factor of the human thumb, offering two actuated degrees of freedom to produce both 'waggle' (abduction/adduction: motion 
+                        that moves the thumb away from the palm) and 'curl' 
+                        (flexion/extension: curling or extending your thumb) motions. The 'waggle' joint operates at a 7.33:1 transmission ratio, driven by Maxon ECX Torque 22XL motors for steady, responsive motion. In contrast, the 'curl' 
+                        movement uses a 7.94:1 ratio powered by Maxon EC 45 Flat motors, chosen for their compact design and strong torque-to-size ratio. Multiple cable wraps, tensioning blocks, and 
+                        CNC-machined pulleys work together to maintain tension. High-precision machining, including turning and milling, ensures tight tolerances and 
+                        secure mechanical coupling. Similar to the finger, there are still some issues regarding tensioning which would likely be resolved by refining the pulley system and having an easier method for tensioning.
+                    </p>
+                    
+                    <h2>Haptic Finger</h2>
+                    <p><span class="image right"><img src="images/rds/mechanical/hfinger.png" alt="" /></span>
+                        The haptic finger subsystem recreates human finger dynamics, offering two actively controlled joints (MCP and PIP) plus an additional passive degree of freedom for more 
+                        more a more natural range of motion. Stainless steel cables, routed through machined pulleys, maintain precise motion transfer. Cables are tensioned using vented screws 
+                        and wing nuts, allowing convenient adjustments and steady performance over time. Similar to other designs Maxon ECX Torque 22XL motors drive the system and are mounted near the palm. The motors
+                        are placed in such a way that they do not interfere with the mounting of the haptic thumb.
+                    </p>
+                    
+                    <h2>Haptic Thumb</h2>
+                    <p><span class="image left"><img src="images/rds/mechanical/thumb.png" alt="" /></span>
+                        The haptic thumb subsystem attempts to emulate the range of motion for the human thumb with only 2 driven degrees of freed. Similar to the robot thumb it offers 'waggle' and 'curl' motions enhanced by an additional passive degree of freedom. Cable 
+                        tension is managed via a series of idler pulleys and vented fasteners to achieve smooth, consistent engagement. Maxon ECX motors drive the both the 'waggle' and 'curl' motions, and a rotating
+                        fitting allows your thumb to freely swivel within the mechanism. A flexible TPU thimble interface accommodates various thumb sizes while preserving a 
+                        secure, ergonomic fit. CNC-machined elements support a sturdy yet lightweight structure. Friction in the cable system occasionally emerges during operation, but we believe this issue could
+                        be fixed with higher tolerance pulleys, and a less complex way to tension the cables.
+                    </p>
                 </div>
-                <p>
-                    The robot finger subsystem is engineered to closely replicate human finger curling motions, featuring two actively actuated joints that deliver smooth, natural articulation. 
-                    Rather than relying on a traditional gear train, it uses a pulley-driven transmission with a 4:1 ratio at each joint, enhancing torque delivery while maintaining a compact profile. 
-                    High-performance Maxon EC 45 flat motors supply the requisite torque density without adding bulk. To ensure stability under load, stainless steel cables are tensioned using 
-                    simple screws and nuts, and magnetic encoders provide precise positional data for fine-tuned control. Structural components are fabricated through both water jet cutting and CNC 
-                    milling for accuracy and durability. While performance and torque efficiency meet design goals, refining linkage interfaces and streamlining the assembly process remains an ongoing priority.
-                </p>
-                
-                <h2>Robot Thumb</h2>
-                <p><span class="image right"><img src="images/rds/mechanical/rthumb.png" alt="" /></span>
-                    Similar to the robot finger, the robot thumb is tailored to replicate the dexterity and form factor of the human thumb, offering two actuated degrees of freedom to produce both 'waggle' (abduction/adduction: motion 
-                    that moves the thumb away from the palm) and 'curl' 
-                    (flexion/extension: curling or extending your thumb) motions. The 'waggle' joint operates at a 7.33:1 transmission ratio, driven by Maxon ECX Torque 22XL motors for steady, responsive motion. In contrast, the 'curl' 
-                    movement uses a 7.94:1 ratio powered by Maxon EC 45 Flat motors, chosen for their compact design and strong torque-to-size ratio. Multiple cable wraps, tensioning blocks, and 
-                    CNC-machined pulleys work together to maintain tension. High-precision machining, including turning and milling, ensures tight tolerances and 
-                    secure mechanical coupling. Similar to the finger, there are still some issues regarding tensioning which would likely be resolved by refining the pulley system and having an easier method for tensioning.
-                </p>
-                
-                <h2>Haptic Finger</h2>
-                <p><span class="image right"><img src="images/rds/mechanical/hfinger.png" alt="" /></span>
-                    The haptic finger subsystem recreates human finger dynamics, offering two actively controlled joints (MCP and PIP) plus an additional passive degree of freedom for more 
-                    more a more natural range of motion. Stainless steel cables, routed through machined pulleys, maintain precise motion transfer. Cables are tensioned using vented screws 
-                    and wing nuts, allowing convenient adjustments and steady performance over time. Similar to other designs Maxon ECX Torque 22XL motors drive the system and are mounted near the palm. The motors
-                    are placed in such a way that they do not interfere with the mounting of the haptic thumb.
-                </p>
-                
-                <h2>Haptic Thumb</h2>
-                <p><span class="image left"><img src="images/rds/mechanical/thumb.png" alt="" style="width: 400px; height: auto;"/></span>
-                    The haptic thumb subsystem attempts to emulate the range of motion for the human thumb with only 2 driven degrees of freed. Similar to the robot thumb it offers 'waggle' and 'curl' motions enhanced by an additional passive degree of freedom. Cable 
-                    tension is managed via a series of idler pulleys and vented fasteners to achieve smooth, consistent engagement. Maxon ECX motors drive the both the 'waggle' and 'curl' motions, and a rotating
-                    fitting allows your thumb to freely swivel within the mechanism. A flexible TPU thimble interface accommodates various thumb sizes while preserving a 
-                    secure, ergonomic fit. CNC-machined elements support a sturdy yet lightweight structure. Friction in the cable system occasionally emerges during operation, but we believe this issue could
-                    be fixed with higher tolerance pulleys, and a less complex way to tension the cables.
-                </p>
+
+                <div style="clear:both"></div>
                 <hr />
                 <h2 style="text-align: center; font-size: 2.5rem;"><u>Previous Prototypes and Iterations</u></h2>
 

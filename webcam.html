@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>MaxPatwardhan.github.io - Responsive Webcam Development</title>
+    <title>MaxPatwardhan.github.io - Webcam</title>
     <link rel="icon" type="image/png" href="images/personal/icon.png">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -36,8 +36,9 @@
             <!-- Project Introduction -->
             <section class="post">
                 <header class="major">
-                    <h2>Responsive Webcam Development Project</h2>
-                    <p>Project with a friend; January 2023 - March 2023</p>
+                    <h2>Wireless Webcam</h2>
+                    <h3>Personal Project</h3>
+                    <p>January 2023 - March 2023</p>
                     
                 </header>
             </section>
@@ -45,22 +46,70 @@
             <!-- Overview -->
             <section id="overview">
                 <h2>Project Overview</h2>
-                <p>The responsive webcam project was designed to create a scalable and functional platform capable of capturing images, processing data, and streaming content via a WiFi-enabled web interface. The project involved three main components: hardware design, including a custom PCB; firmware development, enabling robust communication between the camera and WiFi module; and software implementation for the web-based user interface.</p>
-                <p>One of the primary challenges tackled was managing real-time data flow from the camera to the ESP32 module while ensuring that the system was robust and efficient. The project required expertise in microcontroller programming, PCB layout optimization, and mechanical design for enclosing the hardware securely.</p>
-                <p>This project demonstrates the seamless integration of hardware, firmware, and web development into a functional system capable of real-time image capture and streaming. By building a modular and optimized webcam system, I explored the intersection of embedded systems, circuit design, and user-facing web technology.</p>            
+                <p>The responsive webcam project was designed to create a scalable and functional platform capable of capturing images, processing data, and streaming content via a WiFi-enabled 
+                    web interface. The project involved three main components: hardware design, including a custom PCB; firmware development, transferring data from the camera to the 
+                    WiFi module; and software implementation for the web-based user interface.</p>
+                
+                <p>One of the primary challenges tackled was managing real-time data flow from the camera to the ESP32 module while ensuring that the system was robust and efficient. 
+                    The project required an abundance of low-level programming, PCB layout optimization, and mechanical design for enclosing the hardware securely.</p>
+                
+                <p>This project demonstrates the the full-stack design hardware, firmware, and web development into a functional system capable of real-time image capture and streaming. 
+                    By building a modular and optimized webcam system, I explored the intersection of embedded systems, circuit design, and user-facing web technology.</p>
+                    <h2>Image Gallery</h2>
+                    <div class="box alt">
+                       
+                        <div class="row gtr-50 gtr-uniform">
+                            <div class="col-4">
+                                <span class="image fit">
+                                    <img src="images/esd/IMG_2553.jpg" alt="" class="gallery-item"  />
+                                    <p class="caption">Finished Board</p>
+                                </span>
+                            </div>
+ 
+                           <div class="col-4">
+                               <span class="image fit">
+                                   <img src="images/esd/camBlack.jpg" alt="" class="gallery-item"  />
+                                   <p class="caption">Bare Board</p>
+                               </span>
+                           </div>
+
+                           <div class="col-4">
+                            <span class="image fit">
+                                <img src="images/esd/breakout.png" alt="" class="gallery-item"  />
+                                <p class="caption">Schematic Prototype for Testing SAM MCU </p>
+                            </span>
+                        </div>
+
+
+                           <!-- Add more images as needed -->
+                       </div>
+                   </div>
+                   
+                   <!-- Lightbox -->
+                   <div id="lightbox" class="lightbox">
+                       <div class="lightbox-content">
+                           <img id="lightbox-image" src="" alt="Enlarged view" />
+                           <p id="lightbox-description" class="description"></p>
+                           <span id="lightbox-close">&times;</span>
+                       </div>
+                   </div>
+            
             </section>
 
             <!-- PCB Design -->
             <section id="pcb">
                 <h2>PCB Design and Layout</h2>
-                <p>The heart of the project lies in its custom PCB design, which integrates the microcontroller (ATSAM4S8B), the OV2640 camera module, and the ESP32 for WiFi communication. The PCB was meticulously designed in EagleCAD to ensure signal integrity, minimal cross-talk, and efficient power delivery.</p>
-                <p>Special attention was given to routing high-speed SPI and UART signals between the MCU and the WiFi module. Separate ground planes were utilized to reduce noise, and decoupling capacitors were strategically placed near critical ICs to ensure stable operation. The PCB includes debug headers for USART and SPI communication, allowing real-time monitoring during firmware development.</p>
+                <p>The heart of the project lies in its custom PCB design, which integrates the microcontroller (ATSAM4S8B), the OV2640 camera module, and the ESP32 for WiFi communication. 
+                    The PCB was designed in EagleCAD to ensure signal integrity, minimal cross-talk, and efficient power delivery.</p>
+                <p>Special attention was given to routing high-speed SPI and UART signals between the MCU and the WiFi module. Separate ground planes were utilized to reduce noise, and 
+                    decoupling capacitors were strategically placed near critical ICs to ensure stable operation. The PCB includes debug headers for USART and SPI communication, allowing 
+                    real-time monitoring during firmware development.</p>
                 <div style="text-align:center;">
-                    <img src="images/camBlack.jpg" alt="PCB Front View" style="width:60%; margin-bottom:20px;" />
+                    <img src="images/esd/camcomplete.jpg" alt="PCB Front View" style="width:80%; margin-bottom:20px;" />
                     <p><b>Figure 1:</b> Fully assembled PCB, highlighting key components such as the MCU, camera interface, and debug headers.</p>
-                    <img src="images/eds1.png" alt="PCB Design (EagleCAD)" style="width:60%; margin-bottom:20px;" />
+                    <img src="images/esd/eds1.png" alt="PCB Design (EagleCAD)" style="width:80%; margin-bottom:20px;" />
                     <p><b>Figure 2:</b> PCB design layout in EagleCAD, showcasing routing and signal integrity optimization.</p>
-                    <img src="images/eds2.png" alt="Schematic Design" style="width:60%; margin-bottom:20px;" />
+                    <img src="images/esd/eds2.png" alt="Schematic Design" style="width:80%; margin-bottom:20px;" />
                     <p><b>Figure 3:</b> Schematic capturing connections between the MCU, camera, and WiFi module.</p>
                 </div>
             </section>
@@ -68,10 +117,12 @@
             <!-- 3D-Printed Enclosure -->
             <section id="enclosure">
                 <h2>3D-Printed Enclosure</h2>
-                <p>To ensure the hardware's durability and usability, a 3D-printed enclosure was designed in Onshape. The enclosure features precise cutouts for the camera lens, indicator LEDs, and buttons. It also incorporates mounting options to allow the camera to be securely positioned for various use cases.</p>
-                <p>The enclosure design ensures that all components remain firmly in place, even when subjected to vibrations. Additionally, the enclosure was designed to be lightweight and compact, minimizing material usage while maintaining strength.</p>
+                <p>To ensure the hardware's durability and usability, a 3D-printed enclosure was designed in Onshape. The enclosure features precise cutouts for the camera lens, indicator LEDs, and buttons. 
+                    It also incorporates mounting options to allow the camera to be securely positioned for various use cases.</p>
+                <p>The enclosure design ensures that all components remain firmly in place, even when subjected to vibrations. Additionally, the enclosure was designed to be lightweight and compact, minimizing 
+                    material usage while maintaining strength.</p>
                 <div style="text-align:center;">
-                    <img src="images/case.png" alt="3D-Printed Enclosure" style="width:60%; margin-bottom:20px;" />
+                    <img src="images/esd/case.png" alt="3D-Printed Enclosure" style="width:60%; margin-bottom:20px;" />
                     <p><b>Figure 4:</b> Render of the 3D-printed enclosure, designed for secure component housing and accessibility.</p>
                 </div>
             </section>
@@ -80,31 +131,13 @@
             <section id="web">
                 <h2>Web Interface and Streaming</h2>
                 <p>The ESP32 module acts as a web server, hosting a responsive interface for streaming captured images. The interface features controls for starting and stopping the stream and provides real-time timestamps for captured frames. The web interface was optimized for both desktop and mobile viewing, ensuring accessibility across platforms.</p>
-                <p>Google Lighthouse audits were conducted to ensure performance, accessibility, and best practices. The interface achieves high scores across all metrics, demonstrating its responsiveness and usability.</p>
                 <div style="text-align:center;">
-                    <img src="images/website.png" alt="Web Interface Screenshot" style="width:60%; margin-bottom:20px;" />
+                    <img src="images/esd/website.png" alt="Web Interface Screenshot" style="width:60%; margin-bottom:20px;" />
                     <p><b>Figure 5:</b> Web interface for live streaming, showcasing user-friendly controls and timestamped frames.</p>
                 </div>
             </section>
 
-            <!-- Documentation -->
-            <section id="documentation">
-                <h2>Technical Documentation</h2>
-                <p>Extensive documentation was created to capture the design process and technical challenges. Key topics include the firmware architecture for SPI and UART communication, PCB layout methodologies, and best practices for enclosure design.</p>
-                <ul>
-                    <li><a href="firmware_design.pdf" target="_blank">Firmware Design Documentation</a></li>
-                    <li><a href="Task3.pdf" target="_blank">Microchip Studio Practice</a></li>
-                    <li><a href="Task5.pdf" target="_blank">PCB Design Report</a></li>
-                    <li><a href="Task7.pdf" target="_blank">Enclosure 3D Printing</a></li>
-                </ul>
-            </section>
 
-            <!-- Conclusion -->
-            <section id="conclusion">
-                <h2>Conclusion</h2>
-                <p>The responsive webcam project showcases a comprehensive approach to system integration, combining cutting-edge hardware design, efficient firmware development, and intuitive web-based interaction. The success of this project highlights the importance of modular design, thorough testing, and effective problem-solving in engineering.</p>
-                <p>Future improvements could include optimizing the frame rate for higher resolutions and integrating advanced computer vision capabilities for real-time object detection.</p>
-            </section>
         </div>
 
         <!-- Footer -->
@@ -125,5 +158,7 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/lbox.js"></script>
+    <script src="assets/js/popup1.js" defer></script>
 </body>
 </html>

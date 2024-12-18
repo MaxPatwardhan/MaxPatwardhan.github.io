@@ -110,12 +110,22 @@
                 </p>
 
                 <div class="image-comparison">
-                    <img src="images/esd/brkout copy.jpg" alt="Breakout Boards" class="image-left">
-
-                    <!--<div class="arrow">&rarr;</div>  Unicode arrow -->
+                    <img src="images/esd/brkout copy.jpg" alt="Breakout Boards" class="image-left gallery-item" data-description="Breakout Boards Assembly">
                     <div class="arrow"><i class="fas fa-arrow-right"></i></div>
-                    <img src="images/esd/camSQuar.jpg" alt="After" class="image-right">
+                    <img src="images/esd/camSQuar.jpg" alt="After" class="image-right gallery-item" data-description="Completed Camera Assembly">
                 </div>
+                
+
+
+                <!-- Lightbox -->
+                <div id="lightbox" class="lightbox">
+                    <div class="lightbox-content">
+                        <img id="lightbox-image" src="" alt="Enlarged View">
+                        <p id="lightbox-description" class="description"></p>
+                        <span id="lightbox-close">&times;</span>
+                    </div>
+                </div>
+                
 
                 <br> <br>
                 
@@ -157,12 +167,12 @@
                         <ul class="adjacent-list">
                             <ul style="font-size: 1.1rem;"><strong>Function:</strong>
                                 <ul style="font-size: 1rem;">
-                                    <li> A wireless web camera that hosts a website and stream video at 480p, at 20 frames per second</li>   
+                                     A wireless web camera that hosts a website and streams video at 480p at 20 frames per second 
                                 </ul>
                             </ul>
                             <ul style="font-size: 1.1rem;"><strong>Functional Breakdown:</strong>
                                 <ul style="font-size: 1rem;">
-                                    <li>Provides <b>2 SPI ports</b>, <b>4 UART ports</b>, and <b>3 CAN busses</b> for connection to the microcontroller to support multiple types of peripherals</li>
+                                    <li>The camera and the ATSAM4S8B MCU communicate over I<sup>2</sup>C, with pull-up resistors</li>
                                     <li>Directly commands subsystems motor controllers</li>
                                     <li>Communicates between subsystems too coordinate movement between all 4 devices via an external CAN Bus</li>
                                     <li>Controls activation of each motor E-Stop by direct interface with NPN BJT's on the power board</li>

@@ -5118,6 +5118,24 @@ input, select, textarea {
 		flex-direction: column; /* Stack tables vertically */
 		gap: .1rem; /* Add spacing between tables */
 	}
+	.image-comparison {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 20px; /* Spacing between images and the arrow */
+	}
+	
+	.image-left, .image-right {
+		max-width: 45%; /* Adjust image size */
+		height: auto;
+	}
+	
+	.arrow {
+		font-size: 2rem; /* Adjust the size of the arrow */
+		color: #333; /* Change the arrow color */
+	}
+	
+	
 	
 
 

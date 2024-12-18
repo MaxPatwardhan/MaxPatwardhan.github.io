@@ -6,6 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
 <body class="is-preload">
@@ -100,18 +101,41 @@
                         <span id="lightbox-close">&times;</span>
                     </div>
                 </div>
+
+                <p>
+                    To test the functionality of my circuits and microcontrollers before developing a production board, I created a handful of breakout boards which would allow me to quickly assemble the system with easy
+                    points for scoping. In total, I created a board for the each microcontroller as well as a shield for the camera. Once the circuits were validated, these boards allowed me to begin to write my firmware
+                    for the MCU's in parallel with with the design and manufacturing of the final circuit board, and I used them for the duration of the project. Below is a before and after of the breakout boards and the final 
+                    completed camera:
+                </p>
+
+                <div class="image-comparison">
+                    <img src="images/esd/brkout copy.jpg" alt="Breakout Boards" class="image-left">
+
+                    <!--<div class="arrow">&rarr;</div>  Unicode arrow -->
+                    <div class="arrow"><i class="fas fa-arrow-right"></i></div>
+                    <img src="images/esd/camSQuar.jpg" alt="After" class="image-right">
+                </div>
+
+                <br> <br>
+                
+
+                <div style="clear:both"></div>
+
+                <h2>Layout &amp; Schematic</h2>
+
                 <div class="box alt">
                     <div class="row gtr-50 gtr-uniform">
                         <div class="col-6">
                             <span class="image fit">
-                                <img src="images/esd/brkout.jpg" alt="" class="gallery-item" data-description="Breakout Board system Wired" />
+                                <img src="images/esd/eds1.png" alt="PCB Design (EagleCAD)" class="gallery-item" data-description="PCB Layout" />
                                 <p class="caption">Each breakout board combined</p>
                             </span>
                         </div>
                         <div class="col-6">
                             <span class="image fit">
-                                <img src="images/esd/camBRD.png" alt="" class="gallery-item" data-description="Wow so nice... (hire me pls)" />
-                                <p class="caption">Camera Board Initial Print</p>
+                                <img src="images/esd/eds2.png" alt="" class="gallery-item" data-description="Probably not my prettiest, but well labeled and separated." />
+                                <p class="caption">Web Camera Schematic</p>
                             </span>
                         </div>
 
@@ -127,20 +151,69 @@
                         <span id="lightbox-close">&times;</span>
                     </div>
                 </div>
-                <p>
-                    To test the functionality of my circuits and microcontrollers before developing a production board, I created a handful of breakout boards which would allow me to quickly assemble the system with easy
-                    points for scoping. In total, I created a board for the each microcontroller as well as a shield for the camera. 
-                </p>
-
-                <div style="clear:both"></div>
-
-                <h2>Layout</h2>
-                <div style="text-align:center;">
-                    <img src="images/esd/eds1.png" alt="PCB Design (EagleCAD)" style="width:90%; margin-bottom:20px;" />
+                <div class="row aln-top gtr-uniform">
+                    <!-- List -->
+                    <div class="col-7">
+                        <ul class="adjacent-list">
+                            <ul style="font-size: 1.1rem;"><strong>Function:</strong>
+                                <ul style="font-size: 1rem;">
+                                    <li> A wireless web camera that hosts a website and stream video at 480p, at 20 frames per second</li>   
+                                </ul>
+                            </ul>
+                            <ul style="font-size: 1.1rem;"><strong>Functional Breakdown:</strong>
+                                <ul style="font-size: 1rem;">
+                                    <li>Provides <b>2 SPI ports</b>, <b>4 UART ports</b>, and <b>3 CAN busses</b> for connection to the microcontroller to support multiple types of peripherals</li>
+                                    <li>Directly commands subsystems motor controllers</li>
+                                    <li>Communicates between subsystems too coordinate movement between all 4 devices via an external CAN Bus</li>
+                                    <li>Controls activation of each motor E-Stop by direct interface with NPN BJT's on the power board</li>
+                                    <li>Connects Teensy Microcontroller to peripheral sensors and encoders</li>
+                                    <li>Displays system state with 3 RGB LED's</li>
+                                    <li>Provides <b>2 SPI</b>, <b>4 UART</b>, and <b>3 CAN</b> connections to the microcontroller to support multiple types of peripherals</li>
+                                </ul>
+                            </ul>
+                            <ul style="font-size: 1.1rem;"><strong>Design Features:</strong>
+                                <ul style="font-size: 1rem;">
+                                    <li><strong>Expansion Support:</strong> Contains a surplus of I/O ports so that different peripherals &amp; components can be added in future</li>
+                                    <li><strong>Signal Integrity:</strong> Controlled impedance routing for high-speed signals, ground plane is minimally interrupted, stitching vias exist throughout the board to guarantee low-impedance return path</li>
+                                    <li><strong>Filtering:</strong> Bypass Capacitors at various power and GPIO pins act as Low Pass filters for the MCU  </li>
+                                    <li><strong>High Reparability:</strong> Teensy and CAN transceivers, the two most probable chips to burn out, are implemented in socket (P-DIP) packages for easy replacement.</li>
+                                    <li><strong>Easy Debugging:</strong> Onboard LEDs indicate CAN activity, Teensy Microcontroller is broken-out into headers for testing and scoping, and an onboard toggle switch allows for easy power cycling</li>
+                                    <li><strong>Compact Layout:</strong> Optimized for minimal space without sacrificing functionality</li>
+                                </ul>
+                            </ul>
+                        </ul>
+                    </div>
+                    <!-- Table -->
+                    <div class="col-5">
+                        <div class="table-stack">
+                            <table class="compact-table">
+                                <thead>
+                                    <tr><th>Physical Characteristic</th><th>Value</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>Layers</strong></td><td>2</td></tr>
+                                    <tr><td><strong>Dimensions</strong></td><td>50mm &times; 33mm</td></tr>
+                                    <tr><td><strong>Thickness</strong></td><td>1.6mm</td></tr>
+                                    <tr><td><strong>Copper Thickness</strong></td><td>1 Oz./ft<sup>2</sup></td></tr>
+                                    <tr><td><strong>Substrate</strong></td><td>FR-4</td></tr>
+                                    <tr><td><strong>Minimum Track Spacing</strong></td><td>4 mil</td></tr>
+                                    <tr><td><strong>Vias</strong></td><td>Tented, 0.3mm</td></tr>
+                                </tbody>
+                            </table>
+                            <table class="compact-table">
+                                <thead>
+                                    <tr><th>Threat</th><th>Mitigation Feature</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>Signal Noise</strong></td><td>Decoupling Capacitors</td></tr>
+                                    <tr><td><strong>Parasitic Capacitance</strong></td><td>Stitching Vias, <br> Trace Spacing</td></tr>
+                                    <tr><td><strong>Data Corruption</strong></td><td>Parity Check, <br> Short Trace Length</td></tr>
+                                </tbody>
+                            </table>
+                    
+                        </div>
+                    </div>
                 </div>
-                <p>
-                    Above you can see the overall camera layout. The ATSAM MCU on the opposite side of the ESP32. There are LED indicators on the right side of the board 
-                </p>
                 
                 
                 <div style="text-align:center;">

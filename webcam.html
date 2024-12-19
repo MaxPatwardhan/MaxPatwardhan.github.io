@@ -173,22 +173,18 @@
                             <ul style="font-size: 1.1rem;"><strong>Functional Breakdown:</strong>
                                 <ul style="font-size: 1rem;">
                                     <li>The camera and the ATSAM4S8B MCU communicate over I<sup>2</sup>C, with pull-up resistors</li>
-                                    <li>Directly commands subsystems motor controllers</li>
-                                    <li>Communicates between subsystems too coordinate movement between all 4 devices via an external CAN Bus</li>
-                                    <li>Controls activation of each motor E-Stop by direct interface with NPN BJT's on the power board</li>
-                                    <li>Connects Teensy Microcontroller to peripheral sensors and encoders</li>
-                                    <li>Displays system state with 3 RGB LED's</li>
-                                    <li>Provides <b>2 SPI</b>, <b>4 UART</b>, and <b>3 CAN</b> connections to the microcontroller to support multiple types of peripherals</li>
+                                    <li>The ESP32 and SAM4S8B are connected via both SPI and UART. UART is used for programming and reset, SPI is used to capture images taken by the SAM MCU</li>
+                                    <li>The ESP32 streams successive JPEG images to a live server via Websockets</li>
+
                                 </ul>
                             </ul>
                             <ul style="font-size: 1.1rem;"><strong>Design Features:</strong>
                                 <ul style="font-size: 1rem;">
-                                    <li><strong>Expansion Support:</strong> Contains a surplus of I/O ports so that different peripherals &amp; components can be added in future</li>
+                                    <li><strong>Compact Design</strong> ATSAM4S8B and ESP32 are placed on opposite sides, minimizing trace length and reducing board area</li>
                                     <li><strong>Signal Integrity:</strong> Controlled impedance routing for high-speed signals, ground plane is minimally interrupted, stitching vias exist throughout the board to guarantee low-impedance return path</li>
-                                    <li><strong>Filtering:</strong> Bypass Capacitors at various power and GPIO pins act as Low Pass filters for the MCU  </li>
-                                    <li><strong>High Reparability:</strong> Teensy and CAN transceivers, the two most probable chips to burn out, are implemented in socket (P-DIP) packages for easy replacement.</li>
-                                    <li><strong>Easy Debugging:</strong> Onboard LEDs indicate CAN activity, Teensy Microcontroller is broken-out into headers for testing and scoping, and an onboard toggle switch allows for easy power cycling</li>
-                                    <li><strong>Compact Layout:</strong> Optimized for minimal space without sacrificing functionality</li>
+                                    <li><strong>Filtering:</strong> Bypass Capacitors at various power and GPIO pins act as Low Pass filters for the MCU's  </li>
+                                    <li><strong>Easy Assembly</strong> Most components sit on one side of the board and can be reflow soldered, subcircuits are grouped together, diodes are all oriented the same way, and component package sizing is uniform</li>
+                                    <li><strong>Easy Debugging:</strong> Headers allow for MCU activity to easily be scoped, buttons allow a convenient method for resetting the MCU, and LED indicators display the camera state</li>
                                 </ul>
                             </ul>
                         </ul>
@@ -232,24 +228,62 @@
             <!-- Web Interface -->
             <section id="web">
                 <h2>Web Interface and Streaming</h2>
-                <p>The ESP32 module acts as a web server, hosting a responsive interface for streaming captured images. The interface features controls for starting and stopping the stream and provides real-time timestamps for captured frames. The web interface was optimized for both desktop and mobile viewing, ensuring accessibility across platforms.</p>
-                <div style="text-align:center;">
-                    <img src="images/esd/website.png" alt="Web Interface Screenshot" style="width:60%; margin-bottom:20px;" />
-                    <p><b>Figure 5:</b> The first-ever video the camera streamed!</p>
+                
+                <div class="box alt">
+                    <div class="row gtr-50 gtr-uniform">
+                        <div class="col-6">
+                            <span class="image fit">
+                                <img src="images/esd/itsME.jpg" alt="PCB Design (EagleCAD)" class="gallery-item" data-description="Oh hello there" />
+                                <p class="caption">Webcam Streaming!</p>
+                            </span>
+                        </div>
+                        <div class="col-6">
+                            <span class="image fit">
+                                <img src="images/esd/flowchart.png" alt="" class="gallery-item" data-description="" />
+                                <p class="caption">ATSAM4S8B Embedded Logic</p>
+                            </span>
+                        </div>
+                        <div class="col-6">
+                            <span class="image fit">
+                                <img src="images/esd/website.png" alt="PCB Design (EagleCAD)" class="gallery-item" data-description="My HTML, CSS, and JS has since improved ;)" />
+                                <p class="caption">First Video ever streamed</p>
+                            </span>
+                        </div>
+                        <div class="col-6">
+                            <span class="image fit">
+                                <img src="images/esd/dataflow.png" alt="" class="gallery-item" data-description="High level demonstration of dataflow" />
+                                <p class="caption">Overview of dataflow through system</p>
+                            </span>
+                        </div>
+
+
+                    </div>
                 </div>
+                
+                <!-- Lightbox -->
+                <div id="lightbox" class="lightbox">
+                    <div class="lightbox-content">
+                        <img id="lightbox-image" src="" alt="Enlarged view" />
+                        <p id="lightbox-description" class="description"></p>
+                        <span id="lightbox-close">&times;</span>
+                    </div>
+                </div>
+                <p>As previously mentioned, the ESP32 module acts as a web server, hosting a responsive interface for streaming captured images. 
+                    The interface features controls for starting and stopping the stream and provides real-time timestamps for captured frames. 
+                    The web interface was optimized for both desktop and mobile viewing, ensuring accessibility across platforms.
+                </p>
+
             </section>
  
  
             <!-- 3D-Printed Enclosure -->
             <section id="enclosure">
                 <h2>3D-Printed Enclosure</h2>
-                <p>To ensure the hardware's durability and usability, a 3D-printed enclosure was designed in Onshape. The enclosure features precise cutouts for the camera lens, indicator LEDs, and buttons. 
+                <p>I also designed 3D-printed enclosure in Onshape. The enclosure has cutouts for the camera lens, indicator LEDs, and buttons. 
                     It also incorporates mounting options to allow the camera to be securely positioned for various use cases.</p>
-                <p>The enclosure design ensures that all components remain firmly in place, even when subjected to vibrations. Additionally, the enclosure was designed to be lightweight and compact, minimizing 
-                    material usage while maintaining strength.</p>
                 <div style="text-align:center;">
                     <img src="images/esd/case.png" alt="3D-Printed Enclosure" style="width:60%; margin-bottom:20px;" />
-                    <p><b>Figure 4:</b> Render of the 3D-printed enclosure, designed for secure component housing and accessibility.</p>
+                    <p class="caption">CAD of the 3D-printed enclosure</p>
                 </div>
             </section>
 

@@ -55,45 +55,39 @@
                     <p>Master's Thesis; November 2023 - June 2024</p>
                 </header>
 
-                  <div id="slideshow1" class="slideshow-container">
+                <div class="box alt">
+                  <div class="row gtr-50 gtr-uniform">
+                      <div class="col-4">
+                          <span class="image fit">
+                              <img src="images/metamaterial/dome.jpg" alt="" class="gallery-item" data-description="" />
+                              <p class="caption">Robot in Dome Structure</p>
+                          </span>
+                      </div>
+                      <div class="col-4">
+                          <span class="image fit">
+                              <img src="images/metamaterial/zfSq.jpg" alt="" class="gallery-item" data-description="" />
+                              <p class="caption">Robot Metamaterial Sheet</p>
+                          </span>
+                      </div>
 
-                    <!-- Slides -->
-                    <div class="mySlides fade">
-                        <img src="images/metamaterial/dome.jpg" style="width:100%">
-                    </div>
+                      <div class="col-4">
+                          <span class="image fit">
+                              <img src="images/metamaterial/isoRouting2.png" alt="" class="gallery-item" data-description="" />
+                              <p class="caption">Sectional CAD View</p>
+                          </span>
+                      </div>
 
-                    <div class="mySlides fade">
-                        <img src="images/metamaterial/isoRouting2.png" style="width:100%">
-                    </div>
-                    <div class="mySlides fade">
-                        <img src="images/metamaterial/sprungLinksExploded.png" style="width:100%">
-                    </div>
-                    <div class="mySlides fade">
-                        <img src="images/metamaterial/zestfest9000.jpg" style="width:100%">
-                    </div>
-                    <div class="mySlides fade">
-                        <img src="images/metamaterial/nodeExploded.png" style="width:100%">
-                    </div>
-                    <div class="mySlides fade">
-                        <img src="images/metamaterial/assembledopen.jpg" style="width:100%">
-                    </div>
-
-
-                
-                    <!-- Next and Previous Buttons -->
-                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                </div>
-                
-                <!-- Dots for Navigation -->
-                <div style="text-align:center">
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                    <span class="dot" onclick="currentSlide(4)"></span>
-                    <span class="dot" onclick="currentSlide(5)"></span>
-                    <span class="dot" onclick="currentSlide(6)"></span>
-                </div>
+                      <!-- Add more images as needed -->
+                  </div>
+              </div>
+                                 <!-- Lightbox -->
+            <div id="lightbox" class="lightbox">
+             <div class="lightbox-content">
+                 <img id="lightbox-image" src="" alt="Enlarged view" />
+                 <p id="lightbox-description" class="description"></p>
+                 <span id="lightbox-close">&times;</span>
+             </div>
+         </div>
 
                 <p>During my thesis I developed a robotic 'metamaterial', a type of robotic media that leverages it's unique design and properties to exhibit different behaviors. 
                     I was able to make the robot locomote, grasp, mechanically sense, and form stable 3D structures.
@@ -155,30 +149,56 @@
                         </video>
                     </div>
                     <h2>Some other pretty pictures and Diagrams</h2>
-                    <section id="gallery">
-                        <div class="image-grid">
-    
-                          <div class="image-item">
-                            <img src="images/metamaterial/profilerouting.png" style="width:100%" alt="Image 2">
-                          </div>
-                          <div class="image-item">
-                            <img src="images/metamaterial/isoRouting2.png" alt="Image 3">
-                          </div>
-    
-                        </div>
-                      </section>
-                      <section id="gallery">
-                        <div class="image-grid">
-                          <div class="image-item">
-                            <img src="images/metamaterial/interNodeDrawn.png" alt="Image 1">
-                          </div>
-    
-                          <div class="image-item">
-                            <img src="images/metamaterial/cableRouting.png" alt="Image 4">
-                          </div>
-    
-                        </div>
-                      </section>
+                      <div class="box alt">
+                         <div class="row gtr-50 gtr-uniform">
+                             <div class="col-4">
+                                 <span class="image fit">
+                                     <img src="images/metamaterial/profilerouting.png" alt="" class="gallery-item" data-description="" />
+                                     <p class="caption">Inter Node Cable Routing Side Profile</p>
+                                 </span>
+                             </div>
+                             <div class="col-4">
+                                 <span class="image fit">
+                                     <img src="images/metamaterial/isoRouting2.png" alt="" class="gallery-item" data-description="" />
+                                     <p class="caption">Inter Node Cable Routing Alt. View</p>
+                                 </span>
+                             </div>
+  
+                             <div class="col-4">
+                                 <span class="image fit">
+                                     <img src="images/metamaterial/nodeExploded.png" alt="" class="gallery-item" data-description="" />
+                                     <p class="caption">Exploded View</p>
+                                 </span>
+                             </div>
+                             <div class="col-4">
+                                 <span class="image fit">
+                                     <img src="images/metamaterial/cableRouting.png" alt="" class="gallery-item" data-description="" />
+                                     <p class="caption">Multiple Cables Routed</p>
+                                 </span>
+                             </div>
+                             <div class="col-4">
+                                 <span class="image fit">
+                                     <img src="images/metamaterial/assembledopen.jpg" alt="" class="gallery-item" data-description="" />
+                                     <p class="caption">Open Active Node</p>
+                                 </span>
+                             </div>
+                             <div class="col-4">
+                                 <span class="image fit">
+                                     <img src="images/metamaterial/sprungLinksExploded.png" alt="" class="gallery-item" data-description="" />
+                                     <p class="caption">Secondary Exploded View</p>
+                                 </span>
+                             </div>
+                             <!-- Add more images as needed -->
+                         </div>
+                     </div>
+                                        <!-- Lightbox -->
+                   <div id="lightbox" class="lightbox">
+                    <div class="lightbox-content">
+                        <img id="lightbox-image" src="" alt="Enlarged view" />
+                        <p id="lightbox-description" class="description"></p>
+                        <span id="lightbox-close">&times;</span>
+                    </div>
+                </div>
     
 
 
@@ -227,6 +247,7 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/slideshow.js"></script>
     <script src="assets/js/popup1.js"></script>
+    <script src="assets/js/lbox.js"></script>
 
 </body>
 </html>

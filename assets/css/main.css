@@ -4973,7 +4973,7 @@ input, select, textarea {
 	  
 	  #lightbox {
 		position: fixed;
-		z-index: 1000;
+		z-index: 1050;
 		top: 0;
 		width: 100%;
 		height: 100%;
@@ -5006,7 +5006,7 @@ input, select, textarea {
 		background-color: rgba(0, 0, 0, 0.8);
 		justify-content: center;
 		align-items: center;
-		z-index: 1000;
+		z-index: 9999;
 		overflow: auto;
 	}
 
@@ -5022,12 +5022,9 @@ input, select, textarea {
 		max-height: 80%;
 		border-radius: 10px;
 		transition: transform 0.3s ease;
+		z-index: auto !important;
+		transform: none !important;		
 	}
-
-	/*
-	.lightbox img:hover {
-		transform: scale(1.05); 
-	}*/
 
 	.lightbox .description {
 		position: center;
@@ -5045,13 +5042,18 @@ input, select, textarea {
 		font-size: 40px;
 		color: #fff;
 		cursor: pointer;
-		z-index: 1100;
+		z-index: 9999;
 	}
 
 	.lightbox span:hover {
 		color: #f00;
 	}
 	/* General styling for the images */
+	.box.alt .image.fit {
+		position: relative; /* Establishes a stacking context for each container */
+		display: inline-block;
+		/* overflow: hidden; Prevents content like captions from spilling out */
+	}
 	.box.alt .image.fit img {
 		transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
 		width: 100%; /* Ensure the image fits within its container */
@@ -5061,10 +5063,60 @@ input, select, textarea {
 
 	/* Enlarge the image on hover */
 	.box.alt .image.fit img:hover {
-		transform: scale(1.1); /* Enlarges the image by 10% */
+		
+		/*transform: scale(1.1);  Enlarges the image by 10% */
 		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Adds a shadow for a "pop-out" effect */
-		z-index: 1; /* Brings the image above others if overlapping */
+		z-index: auto; /* Brings the image above others if overlapping */
 	}
+	/* Caption styling */
+	.box.alt .image.fit .caption {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		text-align: center;
+		color: white;
+		background: rgba(0, 0, 0, 0.7);
+		padding: 5px 10px;
+		border-radius: 5px 5px 5px 5px;
+		margin: 0;
+		font-size: 16px;
+		opacity: 0;
+		transition: transform 0.3s ease, opacity 0.3s ease;
+	}
+
+	/* Enlarge image and caption on hover */
+	.box.alt .image.fit:hover img {
+		transform: scale(1.1);
+		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+		z-index: 11;
+	}
+
+	.box.alt .image.fit:hover .caption {
+		transform: scale(1.1);
+		opacity: 1;
+	}
+	.box.alt .image.fit {
+		position: relative; /* Ensure positioning context for caption */
+	}
+	
+	.box.alt .image.fit,
+	.box.alt .image.fit img,
+	.box.alt .image.fit .caption {
+		transform-origin: top center; /* Scale from the top so caption stays at the top */
+	}
+	
+	.box.alt .image.fit:hover {
+		z-index: 1050; /* Bring the hovered image and caption in front of neighbors */
+	}
+	.no-hover .box.alt .image.fit:hover img,
+	.no-hover .box.alt .image.fit:hover .caption {
+		transform: none !important;
+		opacity: 0 !important;
+		box-shadow: none !important;
+		z-index: auto !important;
+	}
+
 
 	/* Center the date in the article header */
 	.center-date {

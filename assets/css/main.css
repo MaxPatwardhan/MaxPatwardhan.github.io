@@ -5058,13 +5058,14 @@ input, select, textarea {
 		transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
 		width: 100%; /* Ensure the image fits within its container */
 		height: auto;
-		border-radius: 10px; /* Optional: rounded corners */
+		 /* Optional: rounded corners */
+		 border-radius: 5px;
 	}
 
 	/* Enlarge the image on hover */
 	.box.alt .image.fit img:hover {
 		
-		/*transform: scale(1.1);  Enlarges the image by 10% */
+		transform: scale(1.1);  /*Enlarges the image by 10% */
 		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Adds a shadow for a "pop-out" effect */
 		z-index: auto; /* Brings the image above others if overlapping */
 	}
@@ -5095,6 +5096,7 @@ input, select, textarea {
 	.box.alt .image.fit:hover .caption {
 		transform: scale(1.1);
 		opacity: 1;
+		z-index: auto;
 	}
 	.box.alt .image.fit {
 		position: relative; /* Ensure positioning context for caption */
@@ -5107,7 +5109,8 @@ input, select, textarea {
 	}
 	
 	.box.alt .image.fit:hover {
-		z-index: 1050; /* Bring the hovered image and caption in front of neighbors */
+		z-index: 10; /* Bring the hovered image and caption in front of neighbors */
+		position: relative;
 	}
 	.no-hover .box.alt .image.fit:hover img,
 	.no-hover .box.alt .image.fit:hover .caption {
@@ -5175,11 +5178,13 @@ input, select, textarea {
 		align-items: center;
 		justify-content: center;
 		gap: 20px; /* Spacing between images and the arrow */
+
 	}
 	
 	.image-left, .image-right {
-		max-width: 45%; /* Adjust image size */
+		max-width: 100%; /* Adjust image size */
 		height: auto;
+		border-radius: 5px;
 	}
 	
 	.arrow {
@@ -5187,15 +5192,44 @@ input, select, textarea {
 		color: #333; /* Change the arrow color */
 	}
 	
+	.image-container {
+		position: relative;
+		display: inline-block;
+		max-width: 45%; /* Adjust the size of the container */
+	}
+	
+	.image-container .caption {
+
+		position: absolute;
+		top: 0px; /* Position at the bottom of the image */
+		left: 0;
+		transform: translateX(0%) translateY(0px); /* Center and start below */
+		width: 100%; /* Caption width relative to the image */
+		background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+		color: #fff;
+		text-align: center;
+		padding: 0px;
+		border-radius: 5px;
+		font-size:16px;
+		opacity: 0; /* Hidden by default */
+		transition: opacity 0.3s ease, transform 0.3s ease;
+	}
+	
+	.image-container:hover .caption {
+		opacity: 1; /* Show the caption */
+		transform: scale(1.05); /* Slide into position */
+	}
+	
 	.image-comparison img {
-		cursor: pointer; /* Indicate clickability */
+		transform-origin: top center;
+		cursor: pointer;
 		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		z-index: auto; /* Ensure proper stacking */
 	}
 	
 	.image-comparison img:hover {
-		transform: scale(1.1);
-		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+		 
+		transform: scale(1.05); /* Enlarge on hover */
+		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Shadow for hover effect */
 	}
-	
-
 

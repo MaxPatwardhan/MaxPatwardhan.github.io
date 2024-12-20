@@ -59,7 +59,7 @@
                         This fast-paced project, developed as part of Northwestern University's selective capstone program in collaboration with Argonne National Laboratory, 
                         focused on designing and implementing a sophisticated haptic-robot telemanipulation system. Argonne National Laboratory desired a system that would allow 
                         their chemists to remotely work with radioactive materials, necessitating a highly precise-yet-strong haptic/robot system. Our solution enables users to control a robotic finger and thumb
-                        using a haptic exoskeleton. I drove the rapid, full-stack design and development of the project's electronics, ultimately providing a highly reliable and easily integrable solution.
+                        using a haptic exoskeleton comprised of a finger and thumb. I drove the rapid, full-stack design and development of the project's electronics, ultimately providing a highly reliable and easily integrable solution.
                     </p>
                     <h2>Image Gallery</h2>
                     <div class="box alt">
@@ -67,32 +67,38 @@
                            <div class="col-4">
                                <span class="image fit">
                                    <img src="images/rds/mechanical/hfinger.png" alt="" class="gallery-item" data-description="Model of Haptic Finger" />
+                                   <p class="caption">Haptic Finger</p>
                                </span>
                            </div>
                            <div class="col-4">
                                <span class="image fit">
                                    <img src="images/rds/mechanical/rthumb.png" alt="" class="gallery-item" data-description="Model of Robot Thumb" />
+                                   <p class="caption">Robot Thumb</p>
                                </span>
                            </div>
 
                            <div class="col-4">
                                <span class="image fit">
                                    <img src="images/rds/mechanical/rfinger.png" alt="" class="gallery-item" data-description="Model of Robot Finger" />
+                                   <p class="caption">Robot Finger</p>
                                </span>
                            </div>
                            <div class="col-4">
                                <span class="image fit">
                                    <img src="images/rds/mechanical/thumb.png" alt="" class="gallery-item" data-description="Model of Haptic Thumb" />
+                                   <p class="caption">Haptic Thumb</p>
                                </span>
                            </div>
                            <div class="col-4">
                                <span class="image fit">
                                    <img src="images/rds/power/pwr_noBG.png" alt="" class="gallery-item" data-description="Power regulation and distribution PCB a.k.a the 'Power Board'" />
+                                   <p class="caption">Power Board</p>
                                </span>
                            </div>
                            <div class="col-4">
                                <span class="image fit">
                                    <img src="images/rds/data/datanonobgbg.png" alt="" class="gallery-item" data-description="Communication and control PCB a.k.a the 'Data Board'" />
+                                   <p class="caption">Data Board</p>
                                </span>
                            </div>
                            <!-- Add more images as needed -->
@@ -176,20 +182,20 @@
                         <div class="col-4">
                             <span class="image fit">
                                 <img src="images/rds/power/IMG_0840.jpg" alt="" class="gallery-item" data-description="A fully soldered board" />
-                                <p class="caption">Soldered Board</p>
+                                <p class="caption">Soldered Power Board</p>
                             </span>
                         </div>
                         <div class="col-4">
                             <span class="image fit">
                                 <img src="images/rds/power/pwrL.png" alt="" class="gallery-item" data-description="Power Board Layout (ground planes not shown)" />
-                                <p class="caption">Board Layout (Ground Planes Not Pictured)</p>
+                                <p class="caption">Power Board Layout (Ground Planes Not Pictured)</p>
                             </span>
                         </div>
 
                         <div class="col-4">
                             <span class="image fit">
                                 <img src="images/rds/schematics/pwrS.png" alt="" class="gallery-item" data-description="Power Board Schematic" />
-                                <p class="caption">Electrical Schematic </p>
+                                <p class="caption">Power Board Schematic Capture</p>
                             </span>
                         </div>
                     </div>
@@ -277,12 +283,18 @@
                         </div>
                     </div>
                 </div> 
+                <h2 style="text-align: center; font-size: 1.5rem; " >Prototype vs. Final Design</h2>
                 <div class="image-comparison">
-                    <img src="images/rds/power/oldpwr.png" alt="Breakout Boards" class="image-left gallery-item" data-description="Breakout Boards Assembly">
+                    <div class="image-container">
+                        <img src="images/rds/power/oldpwr.png" alt="Breakout Boards" class="image-left gallery-item" data-description="Initial Prototype">
+                        <div class="caption">Prototype Power Board Layout</div>
+                    </div>
                     <div class="arrow"><i class="fas fa-arrow-right"></i></div>
-                    <img src="images/rds/power/pwr_noBG.png" alt="After" class="image-right gallery-item" data-description="Completed Camera Assembly">
+                    <div class="image-container">
+                        <img src="images/rds/power/pwrL.png" alt="After" class="image-right gallery-item" data-description="Final Power Board Layout">
+                        <div class="caption">Final Power Board Design</div>
+                    </div>
                 </div>
-                
                 <!-- Lightbox -->
                 <div id="lightbox" class="lightbox">
                     <div class="lightbox-content">
@@ -291,6 +303,8 @@
                         <span id="lightbox-close">&times;</span>
                     </div>
                 </div>
+                <br>
+                <div style="clear: both;"></div>
 <!-------------------------------------------------------------------------------------------------->
                 <h2>Data Board</h2>
                 <div class="box alt">
@@ -384,7 +398,28 @@
                         </div>
                     </div>
                 </div>
-                
+                <h2 style="text-align: center; font-size: 1.5rem; " >Prototype vs. Final Design</h2>
+                <div class="image-comparison">
+                    <div class="image-container">
+                        <img src="images/rds/data/dataOLD.png" alt="Breakout Boards" class="image-left gallery-item" data-description="Initial Data Board Prototype Layout">
+                        <div class="caption">Prototype Data Board Layout</div>
+                    </div>
+                    <div class="arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="image-container">
+                        <img src="images/rds/data/dataL.png    " alt="After" class="image-right gallery-item" data-description="Final Data Board Layout">
+                        <div class="caption">Final Data Board Layout</div>
+                    </div>
+                </div>
+                <!-- Lightbox -->
+                <div id="lightbox" class="lightbox">
+                    <div class="lightbox-content">
+                        <img id="lightbox-image" src="" alt="Enlarged View">
+                        <p id="lightbox-description" class="description"></p>
+                        <span id="lightbox-close">&times;</span>
+                    </div>
+                </div>
+                <br>
+                <div style="clear: both;"></div>
 <!-------------------------------------------------------------------------------------------------->
 
                 <h2>Encoder Boards</h2>
@@ -393,7 +428,7 @@
                         <div class="col-3">
                             <span class="image fit">
                                 <img src="images/rds/data/IMG_0734.jpg" alt="" class="gallery-item" data-description="A bare encoder board" />
-                                <p class="caption">Bare circular Board</p>
+                                <p class="caption">Bare Encoder Board</p>
                             </span>
                         </div>
                         <div class="col-3">
@@ -442,8 +477,9 @@
                             <li style="font-size: 1.1rem;">
                                 <strong>Design Features:</strong>
                                 <ul style="font-size: 1rem;">
+                                    <li><strong>Custom Dimensions</strong> Custom dimensions, layout, and connector configuration tailored to each subsystem</li>
                                     <li><strong>High Precision:</strong> Supports 14 bit resolution, or 0.022&deg;</li>
-                                    <li><strong>Low Profile</strong> Designed to fit within compact mechanical systems</li>
+                                    <li><strong>Low Profile:</strong> Designed to fit within compact mechanical systems</li>
                                     <li><strong>High Speed:</strong> Supports SPI clock rates up to 10MHz</li>
                                     <li><strong>No Shielding required:</strong> Encoder is immune to external stray fields</li>
                                 </ul>
@@ -473,7 +509,7 @@
                                 </thead>
                                 <tbody>
                                     <tr><td><strong>Signal Degradation</strong></td><td>Filtering Capacitors</td></tr>
-                                    <tr><td><strong>Bad Connection</strong></td><td>Latching Molex Pico connectors</td></tr>
+                                    <tr><td><strong>Bad Connection</strong></td><td>Latching Molex Pico Connectors</td></tr>
                                 </tbody>
                             </table>
                         </div>

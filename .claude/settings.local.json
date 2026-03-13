@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc -l /c/Users/RobotArm/Documents/GitHub/MaxPatwardhan.github.io/*.html)",
+      "Bash(grep -n \"github.com\\\\|www.linkedin.com\" /c/Users/RobotArm/Documents/GitHub/MaxPatwardhan.github.io/*.html)",
+      "Bash(grep -n \"data-description=\"\"\"\"\" /c/Users/RobotArm/Documents/GitHub/MaxPatwardhan.github.io/*.html)",
+      "Bash(grep -n \"alt=\"\"\"\"\" /c/Users/RobotArm/Documents/GitHub/MaxPatwardhan.github.io/*.html)",
+      "Bash(grep -n \"style=\"\"margin: 1;\"\"\" /c/Users/RobotArm/Documents/GitHub/MaxPatwardhan.github.io/*.html)",
+      "Bash(grep -n \"assets\\\\\\\\resume\" /c/Users/RobotArm/Documents/GitHub/MaxPatwardhan.github.io/metamaterial.html)",
+      "Bash(grep -n \"</a>$\" /c/Users/RobotArm/Documents/GitHub/MaxPatwardhan.github.io/aadfr.html)",
+      "Bash(grep -v \"^$\")"
+    ]
+  }
+}

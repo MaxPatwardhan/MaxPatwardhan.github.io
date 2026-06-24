@@ -8,7 +8,19 @@
       "Bash(grep -n \"style=\"\"margin: 1;\"\"\" /c/Users/RobotArm/Documents/GitHub/MaxPatwardhan.github.io/*.html)",
       "Bash(grep -n \"assets\\\\\\\\resume\" /c/Users/RobotArm/Documents/GitHub/MaxPatwardhan.github.io/metamaterial.html)",
       "Bash(grep -n \"</a>$\" /c/Users/RobotArm/Documents/GitHub/MaxPatwardhan.github.io/aadfr.html)",
-      "Bash(grep -v \"^$\")"
+      "Bash(grep -v \"^$\")",
+      "Bash(grep -iE '\\\\.\\(jpg|jpeg|png|tif|tiff|heic\\)$')",
+      "Bash(cp ~/Downloads/DSC_3672.jpeg images/macro/bee_1.jpg)",
+      "Bash(cp ~/Downloads/DSC_3684.JPEG images/macro/bee_2.jpg)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(command -v magick convert ffmpeg)",
+      "Bash(magick -version)",
+      "Bash(command -v python python3)",
+      "Read(//c/Users/RobotArm/Downloads/WPy64-31241/python-3.12.4.amd64/**)",
+      "Bash(C:/Users/RobotArm/Downloads/WPy64-31241/python-3.12.4.amd64/python.exe -c 'import PIL; from PIL import Image; print\\('\\\\''Pillow'\\\\'', PIL.__version__\\); im=Image.open\\('\\\\''C:/Users/RobotArm/Documents/GitHub/MaxPatwardhan.github.io/images/macro/lightning.jpg'\\\\''\\); print\\('\\\\''size'\\\\'', im.size, '\\\\''mode'\\\\'', im.mode\\)')",
+      "Bash(awk -F'\\\\t' '{printf \"%.1fMB\\\\t%s\\\\n\", $1/1048576, $2}')"
     ]
   }
 }
